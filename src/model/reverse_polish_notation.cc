@@ -2,15 +2,11 @@
 
 using namespace s21;
 
-/**
-* converts a string into a list of separate lexemes converted into RPN
-* @return list of lexemes converted into RPN
-*/
+
 std::list<Lexeme> ReversePolishNotation::Reverse() {
  std::stack<Lexeme> operators;
 
- /* value to move the iterator in the string after parsing a lexeme */
- size_t move_iter = 1;
+ size_t move_iter = 1; /// < value to move the iterator in the string after parsing a lexeme
 
  auto symbol = str_.begin();
  while (symbol != str_.end()) {
@@ -33,11 +29,6 @@ std::list<Lexeme> ReversePolishNotation::Reverse() {
  return rpn_list_;
 }
 
-/**
-* parses a number as a single lexeme and pushes it to the RPN List
-* @param it - pointer to the first digit of a number
-* @return value to move the iterator in the string after parsing a lexeme
-*/
 size_t ReversePolishNotation::ParseNumber(std::string::iterator it) {
  Lexeme new_lexeme;
 
@@ -55,53 +46,11 @@ size_t ReversePolishNotation::ParseNumber(std::string::iterator it) {
  return (move_iter);
 }
 
-/**
-* checks if '-' or '+' is unary
-* @param it - iterator to the element
-* @return true if unary, otherwise false
-*/
-bool ReversePolishNotation::IsUnary(std::string::iterator it) {
- if (*it == '+' || *it == '-') {
-   /* if the operator is first in the string */
-   if (*it == *str_.begin()) {
-     return true;
-   }
-
-   /* if the operator follows '(' */
-   if (*(--it) == '(') {
-     return true;
-   }
- }
- return false;
-}
-
-/**
-* pops and adds to RPN list everything until '(' is met
-* @param operators_stack - stack of operators
-*/
-void ReversePolishNotation::CloseParenth(std::stack<Lexeme> &operators_stack) {
- Lexeme element;
- while (!operators_stack.empty()) {
-   element = operators_stack.top();
-   if (element.value == "(") {
-     operators_stack.pop();
-     break;
-   }
-   rpn_list_.push_back(element);
-   operators_stack.pop();
- }
-}
-
-/**
-* parses an operator and pushes it to the stack
-* @param operators_stack - stack of operators
-* @param it - pointer to an element in the string
-*/
 void ReversePolishNotation::ParseOperator(std::stack<Lexeme> &operators_stack,
                                          std::string::iterator it) {
  Lexeme new_element(*it, GetPriority(it), LexemeType::kOperator);
 
- /* if + or - is an unary sign, push 0 to RPN list */
+ /* if '+' or '-' is an unary sign, push 0 to RPN list */
  if (IsUnary(it)) {
    Lexeme add_zero('0', Priority::kPriority_0, LexemeType::kNumber);
    rpn_list_.push_back(add_zero);
@@ -128,11 +77,25 @@ void ReversePolishNotation::ParseOperator(std::stack<Lexeme> &operators_stack,
  }
 }
 
-/**
-* checks the priority of the element
-* @param it - iterator to the element
-* @return Priority of the element
-*/
+void ReversePolishNotation::CloseParenth(std::stack<Lexeme> &operators_stack) {
+ Lexeme element;
+ while (!operators_stack.empty()) {
+   element = operators_stack.top();
+   if (element.value == "(") {
+     operators_stack.pop();
+     break;
+   }
+   rpn_list_.push_back(element);
+   operators_stack.pop();
+ }
+}
+
+void ReversePolishNotation::PushOpenParenth(
+   std::stack<Lexeme> &operators_stack) {
+ Lexeme parenthesis('(', Priority::kPriority_0, LexemeType::kOperator);
+ operators_stack.push(parenthesis);
+}
+
 Priority ReversePolishNotation::GetPriority(std::string::iterator it) {
  Priority element_priority;
  if (*it == '(') {
@@ -150,12 +113,21 @@ Priority ReversePolishNotation::GetPriority(std::string::iterator it) {
  return element_priority;
 }
 
-/**
-* pushes opening parenthesis to the stack
-* @param operators_stack
-*/
-void ReversePolishNotation::PushOpenParenth(
-   std::stack<Lexeme> &operators_stack) {
- Lexeme parenthesis('(', Priority::kPriority_0, LexemeType::kOperator);
- operators_stack.push(parenthesis);
+bool ReversePolishNotation::IsUnary(std::string::iterator it) {
+ if (*it == '+' || *it == '-') {
+   /* if the operator is first in the string */
+   if (*it == *str_.begin()) {
+     return true;
+   }
+
+   /* if the operator follows '(' */
+   if (*(--it) == '(') {
+     return true;
+   }
+ }
+ return false;
 }
+
+
+
+
