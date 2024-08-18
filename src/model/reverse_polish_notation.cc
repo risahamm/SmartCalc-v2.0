@@ -50,7 +50,7 @@ void ReversePolishNotation::ParseOperator(std::stack<Lexeme> &operators_stack,
                                          std::string::iterator it) {
  Lexeme new_element(*it, GetPriority(it), LexemeType::kOperator);
 
- /* if '+' or '-' is an unary sign, push 0 to RPN list */
+ /* if `+` or `-` is an unary sign, push 0 to RPN list */
  if (IsUnary(it)) {
    Lexeme add_zero('0', Priority::kPriority_0, LexemeType::kNumber);
    rpn_list_.push_back(add_zero);

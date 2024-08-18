@@ -76,7 +76,7 @@ class ReversePolishNotation {
   Priority GetPriority(std::string::iterator it);
 
   /**
-  * @brief Checks if '-' or '+' is unary
+  * @brief Checks if `-` or `+` is unary
   * @param it - iterator to the element
   * @return true if unary, otherwise false
   */
