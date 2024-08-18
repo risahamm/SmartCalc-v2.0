@@ -7,11 +7,11 @@
 namespace s21 {
 
 /**
- * @brief Class for converting an input string from wide string to basic string
- * for calculation
+ * @brief Class for converting an input string a string suitable
+ * for calculation.
  * @details This class takes a string of wide characters and converts it
- * into basic string suitable for calculation. It transforms wide symbols into
- * standard char.
+ * into basic string suitable for calculation. It transforms wide symbol into
+ * standard char and formats string for calculations.
  */
 class FormatString {
  public:
