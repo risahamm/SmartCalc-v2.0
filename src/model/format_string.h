@@ -1,5 +1,5 @@
-#ifndef CPP3_SMARTCALC_V2_0_1_SRC_MODEL_WIDE_STRING_TO_BASIC_H
-#define CPP3_SMARTCALC_V2_0_1_SRC_MODEL_WIDE_STRING_TO_BASIC_H
+#ifndef CPP3_SMARTCALC_V2_0_1_SRC_MODEL_FORMAT_STRING_H
+#define CPP3_SMARTCALC_V2_0_1_SRC_MODEL_FORMAT_STRING_H
 
 #include <locale>
 #include <string>
@@ -13,9 +13,9 @@ namespace s21 {
  * into basic string suitable for calculation. It transforms wide symbols into
  * standard char.
  */
-class WideStringToBasic {
+class FormatString {
  public:
-  WideStringToBasic(std::wstring const input_str) : wide_str_(input_str) {
+  FormatString(std::wstring const input_str) : wide_str_(input_str) {
     Convert();
   }
 
@@ -29,7 +29,7 @@ class WideStringToBasic {
 
 };  // class wide_string_to_basic
 
-std::string WideStringToBasic::Convert() {
+std::string FormatString::Convert() {
   setlocale(LC_ALL, "en_US.UTF-8");
   size_t str_length = wide_str_.length();
   char buffer[str_length];  /// < temporary buffer to store C-string
@@ -86,4 +86,4 @@ std::string WideStringToBasic::Convert() {
 
 }  // namespace s21
 
-#endif  // CPP3_SMARTCALC_V2_0_1_SRC_MODEL_WIDE_STRING_TO_BASIC_H
+#endif  // CPP3_SMARTCALC_V2_0_1_SRC_MODEL_FORMAT_STRING_H

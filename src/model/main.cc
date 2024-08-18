@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "wide_string_to_basic.h"
+#include "format_string.h"
 using namespace std;
 
 int main() {
@@ -11,7 +11,7 @@ int main() {
   wstring str;
   str = L"1×2÷3+√(25.0)-ln(3)-log(2)+asin(1)-tan(0)";
 
-  s21::WideStringToBasic a(str);
+  s21::FormatString a(str);
 
   cout << "end " << endl;
 
