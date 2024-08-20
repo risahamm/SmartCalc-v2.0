@@ -25,14 +25,19 @@ class ReversePolishNotation {
   }
 
   /**
+   * @brief Default destructor
+   */
+  ~ReversePolishNotation() = default;
+
+  /**
    * @brief Gets a list of lexemes in RPN
    * @return std::list<Lexeme> list of lexemes representing the expression in RPN
    */
   std::list<Lexeme> GetRpnList() { return rpn_list_; };
 
  private:
-  std::list<Lexeme> rpn_list_; /// < list of separate lexemes converted into RPN
-  std::string str_; /// < input string containing an expression to calculate
+  std::list<Lexeme> rpn_list_; ///< list of separate lexemes converted into RPN
+  std::string str_; ///< input string containing an expression to calculate
 
   /**
   * @brief Converts a string into a list of separate lexemes converted into RPN

@@ -7,7 +7,7 @@
 namespace s21 {
 
 /**
- * @brief Class for converting an input string a string suitable
+ * @brief Class for converting an input string into a string suitable
  * for calculation.
  * @details This class takes a string of wide characters and converts it
  * into basic string suitable for calculation. It transforms wide symbol into
@@ -15,16 +15,34 @@ namespace s21 {
  */
 class FormatString {
  public:
+
+  /**
+   * @brief Parametrized constructor
+   * @param input_str - wstring to be converted
+   */
   FormatString(std::wstring const input_str) : wide_str_(input_str) {
     Convert();
   }
 
+  /**
+   * @brief Default destructor
+   */
+  ~FormatString() = default;
+
+  /**
+   * @brief Accessor
+   * @return std::string expression suitable for calculation
+   */
   std::string GetString() { return basic_str_; }
 
  private:
-  std::string basic_str_;  /// < result of convertion
-  std::wstring wide_str_;  /// < input string to be converted
+  std::string basic_str_;  ///< result of convertion
+  std::wstring wide_str_;  ///< input string to be converted
 
+  /**
+   * @brief Converts wstring into a string suitable for calculation
+   * @return std::string expression to be calculated
+   */
   std::string Convert();
 
 };  // class wide_string_to_basic
@@ -32,12 +50,12 @@ class FormatString {
 std::string FormatString::Convert() {
   setlocale(LC_ALL, "en_US.UTF-8");
   size_t str_length = wide_str_.length();
-  char buffer[str_length];  /// < temporary buffer to store C-string
+  char buffer[str_length];  ///< temporary buffer to store C-string
   memset(buffer, 0, str_length);
   char add_symbol[3] = {0};
   std::wstring
-      temp_wstr;  /// < temporary wstring to store a wide char to be converted
-  size_t iter_move = 0;  /// < value to move iterator in the string
+      temp_wstr;  ///< temporary wstring to store a wide char to be converted
+  size_t iter_move = 0;  ///< value to move iterator in the string
   std::wstring::iterator it = wide_str_.begin();
   for (size_t i = 0; i < str_length; ++i) {
     if (*it == L'÷') {
