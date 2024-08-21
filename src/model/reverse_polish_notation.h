@@ -10,7 +10,7 @@ namespace s21 {
 
 /**
  * @brief Class for converting an expression into Reversed Polish Notation (RPN).
- * @details This class takes a string expression and converts it to reverse Polish notation.
+ * @details This class takes a string expression, splits it into lexemes and converts them into RPN.
  * The result is stored in std::list container.
  */
 class ReversePolishNotation {

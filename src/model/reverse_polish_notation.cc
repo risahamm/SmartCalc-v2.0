@@ -6,7 +6,7 @@ using namespace s21;
 std::list<Lexeme> ReversePolishNotation::Reverse() {
  std::stack<Lexeme> operators;
 
- size_t move_iter = 1; /// < value to move the iterator in the string after parsing a lexeme
+ size_t move_iter = 1; ///< value to move the iterator in the string after parsing a lexeme
 
  auto symbol = str_.begin();
  while (symbol != str_.end()) {
