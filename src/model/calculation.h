@@ -15,12 +15,17 @@ class Calculation {
    * @brief Parametrized constructor
    * @param rpn_list - expression in RPN to be calculated
    */
-  Calculation(std::list<s21::Lexeme> rpn_list) : expression_(rpn_list) {}
+  Calculation(std::list<Lexeme> rpn_list)
+      : expression_(rpn_list), calculaton_result_(0) {
+    Parse();
+  }
 
-  double Calculate();
+  double Calculate(s21::Lexeme &current_operator, std::stack<double> &numbers);
+
+  double GetResult() { return calculaton_result_; }
 
  private:
-  std::list<s21::Lexeme> expression_;  ///< expression in RPN to calculate
+  std::list<Lexeme> expression_;  ///< expression in RPN to calculate
   double calculaton_result_;
 
   void Parse();
@@ -28,9 +33,9 @@ class Calculation {
 };  // class Calculation
 
 void Calculation::Parse() {
-  double result = 0;
+  double operation_result = 0;
   std::stack<double> numbers;
-  s21::Lexeme lexeme;
+  Lexeme lexeme;
   double number;
   while (!expression_.empty()) {
     lexeme = expression_.front();
@@ -40,10 +45,65 @@ void Calculation::Parse() {
       numbers.push(number);
     }
     if (lexeme.type == LexemeType::kOperator) {
-      result += Calculate();
+      operation_result = Calculate(lexeme, numbers);
+      numbers.push(operation_result);
     }
   }
-  calculaton_result_ = result;
+  calculaton_result_ = numbers.top();
+  numbers.pop();
+}
+
+double Calculation::Calculate(s21::Lexeme &current_operator,
+                              std::stack<double> &numbers) {
+  double result = 0;
+  double a = numbers.top();
+  double b = 0;
+  numbers.pop();
+
+  /* operations that require two operands */
+  if (current_operator.priority == Priority::kPriority_1 ||
+      current_operator.priority == Priority::kPriority_2) {
+    b = numbers.top();
+    numbers.pop();
+    if (current_operator.value == "+") {
+      result = b + a;
+    } else if (current_operator.value == "-") {
+      result = b - a;
+    } else if (current_operator.value == "*") {
+      result = b * a;
+    } else if (current_operator.value == "/") {
+      result = b / a;
+    } else if (current_operator.value == "%") {
+      if (a == 0.0) {
+        result = NAN;
+      } else {
+        result = static_cast<int>(b) % static_cast<int>(a);
+      }
+    }
+
+    /* operations that require one operand (except pow) */
+  } else {
+    if (current_operator.value == "r") {
+      result = sqrt(a);
+    } else if (current_operator.value == "^") {
+      b = numbers.top();
+      numbers.pop();
+      result = pow(b, a);
+    } else if (current_operator.value == "s") {
+      result = sin(a);
+    } else if (current_operator.value == "c") {
+      result = cos(a);
+    } else if (current_operator.value == "t") {
+      result = tan(a);
+    } else if (current_operator.value == "S") {
+      result = asin(a);
+    } else if (current_operator.value == "C") {
+      result = acos(a);
+    } else if (current_operator.value == "T") {
+      result = atan(a);
+    }
+  }
+  return result;
 }
 
 }  // namespace s21

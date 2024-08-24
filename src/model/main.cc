@@ -1,21 +1,22 @@
 #include <iostream>
 
+#include "calculation.h"
 #include "format_string.h"
+#include "reverse_polish_notation.h"
 using namespace std;
 
 int main() {
-  //    s21::ReversePolishNotation a("12+(-1)");
 
-//  setlocale(LC_ALL, "rus");
+//  wstring str = L"(2+3)×cos(100-100)";
+  wstring str = L"2^(2^(3))";
 
-//  wstring str;
-//  str = L"1×2÷3+√(25.0)-ln(3)-log(2)+asin(1)-tan(0)";
+  s21::FormatString a(str);
 
-//  s21::FormatString a(str);
+  s21::ReversePolishNotation b(a.GetString());
 
-  cout << "end " << endl;
+  s21::Calculation c(b.GetRpnList());
 
-
+  cout << "end " << c.GetResult() << endl;
 
 
 }

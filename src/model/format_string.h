@@ -15,7 +15,6 @@ namespace s21 {
  */
 class FormatString {
  public:
-
   /**
    * @brief Parametrized constructor
    * @param input_str - wstring to be converted
@@ -58,7 +57,9 @@ std::string FormatString::Convert() {
   size_t iter_move = 0;  ///< value to move iterator in the string
   std::wstring::iterator it = wide_str_.begin();
   for (size_t i = 0; i < str_length; ++i) {
-    if (*it == L'÷') {
+    if (*it == L'X') {
+      strcat(buffer, "x");
+    } else if (*it == L'÷') {
       strcat(buffer, "/");
     } else if (*it == L'×') {
       strcat(buffer, "*");
