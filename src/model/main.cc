@@ -7,8 +7,8 @@ using namespace std;
 
 int main() {
 
-//  wstring str = L"(2+3)×cos(100-100)";
-  wstring str = L"2^(2^(3))";
+  wstring str = L"(2+3)×cos(100-100)";
+//  wstring str = L"2^(2^(3))";
 
   s21::FormatString a(str);
 

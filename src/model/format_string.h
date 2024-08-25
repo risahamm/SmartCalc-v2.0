@@ -49,14 +49,14 @@ class FormatString {
 std::string FormatString::Convert() {
   setlocale(LC_ALL, "en_US.UTF-8");
   size_t str_length = wide_str_.length();
-  char buffer[str_length];  ///< temporary buffer to store C-string
-  memset(buffer, 0, str_length);
+  char buffer[str_length + 1];  ///< temporary buffer to store C-string
+  memset(buffer, 0, (str_length + 1));
   char add_symbol[3] = {0};
   std::wstring
-      temp_wstr;  ///< temporary wstring to store a wide char to be converted
+      temp_wstr;         ///< temporary wstring to store a wchar to be converted
   size_t iter_move = 0;  ///< value to move iterator in the string
   std::wstring::iterator it = wide_str_.begin();
-  for (size_t i = 0; i < str_length; ++i) {
+  while (it != wide_str_.end()) {
     if (*it == L'X') {
       strcat(buffer, "x");
     } else if (*it == L'÷') {
