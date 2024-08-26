@@ -20,91 +20,38 @@ class Calculation {
     Parse();
   }
 
-  double Calculate(s21::Lexeme &current_operator, std::stack<double> &numbers);
+  /**
+   * @brief Default destructor
+   */
+  ~Calculation() = default;
 
-  double GetResult() { return calculaton_result_; }
+  /**
+   * @brief Retrieves the result of calculation
+   * @return string representing the result of the last calculation or an error message if applicable
+   */
+  std::string GetResult();
 
  private:
   std::list<Lexeme> expression_;  ///< expression in RPN to calculate
-  double calculaton_result_;
+  std::string calculaton_result_; ///< result of calculations
 
+  /**
+   * @brief Iterates through the expression, pushing numbers into stack and performing calculations
+   * when operators are encountered.
+   * @details Results of operations are also pushed into stack. At the end of the parsing,
+   * the final result of the expression is stored as a string in calculation_result_
+   */
   void Parse();
 
+  /**
+   * @brief Performs arithmetic and trigonometric calculations based on the given operator and operands
+   * @param current_operator - reference to the lexeme that contains the operator to be applied
+   * @param numbers - stack of double values representing the operands
+   * @return result of calculations as a double
+   */
+  double Calculate(s21::Lexeme &current_operator, std::stack<double> &numbers);
+
 };  // class Calculation
-
-void Calculation::Parse() {
-  double operation_result = 0;
-  std::stack<double> numbers;
-  Lexeme lexeme;
-  double number;
-  while (!expression_.empty()) {
-    lexeme = expression_.front();
-    expression_.pop_front();
-    if (lexeme.type == LexemeType::kNumber) {
-      number = std::stod(lexeme.value);
-      numbers.push(number);
-    }
-    if (lexeme.type == LexemeType::kOperator) {
-      operation_result = Calculate(lexeme, numbers);
-      numbers.push(operation_result);
-    }
-  }
-  calculaton_result_ = numbers.top();
-  numbers.pop();
-}
-
-double Calculation::Calculate(s21::Lexeme &current_operator,
-                              std::stack<double> &numbers) {
-  double result = 0;
-  double a = numbers.top();
-  double b = 0;
-  numbers.pop();
-
-  /* operations that require two operands */
-  if (current_operator.priority == Priority::kPriority_1 ||
-      current_operator.priority == Priority::kPriority_2) {
-    b = numbers.top();
-    numbers.pop();
-    if (current_operator.value == "+") {
-      result = b + a;
-    } else if (current_operator.value == "-") {
-      result = b - a;
-    } else if (current_operator.value == "*") {
-      result = b * a;
-    } else if (current_operator.value == "/") {
-      result = b / a;
-    } else if (current_operator.value == "%") {
-      if (a == 0.0) {
-        result = NAN;
-      } else {
-        result = static_cast<int>(b) % static_cast<int>(a);
-      }
-    }
-
-    /* operations that require one operand (except pow) */
-  } else {
-    if (current_operator.value == "r") {
-      result = sqrt(a);
-    } else if (current_operator.value == "^") {
-      b = numbers.top();
-      numbers.pop();
-      result = pow(b, a);
-    } else if (current_operator.value == "s") {
-      result = sin(a);
-    } else if (current_operator.value == "c") {
-      result = cos(a);
-    } else if (current_operator.value == "t") {
-      result = tan(a);
-    } else if (current_operator.value == "S") {
-      result = asin(a);
-    } else if (current_operator.value == "C") {
-      result = acos(a);
-    } else if (current_operator.value == "T") {
-      result = atan(a);
-    }
-  }
-  return result;
-}
 
 }  // namespace s21
 
