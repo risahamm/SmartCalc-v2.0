@@ -19,12 +19,12 @@ include_directories(${CMAKE_SOURCE_DIR}/view)
 include_directories(${CMAKE_SOURCE_DIR}/model)
 
 set(PROJECT_SOURCES
-        main.cpp
+        main.cс
         view/view.cc
         view/view.h
         view/view.ui
         view/qcustomplot.h
-        view/qcustomplot.cpp
+        view/qcustomplot.cс
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
