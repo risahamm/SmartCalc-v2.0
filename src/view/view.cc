@@ -1,61 +1,61 @@
 #include "view.h"
+
 #include "./ui_view.h"
 
-View::View(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::View)
-{
-    ui->setupUi(this);
+View::View(QWidget *parent) : QMainWindow(parent), ui(new Ui::View) {
+  ui->setupUi(this);
 
+  QRegularExpressionValidator *regexXValidator =
+      new QRegularExpressionValidator(QRegularExpression(
+          "^(-?100000000000(\\.0{1,6})?|(-?[0-9]{1,11})(\\.[0-9]{1,6})?)$"));
+  ui->x_value_input->setValidator(regexXValidator);
 
-QRegularExpressionValidator *regexXValidator =
-    new QRegularExpressionValidator(QRegularExpression("^(-?100000000000(\\.0{1,6})?|(-?[0-9]{1,11})(\\.[0-9]{1,6})?)$"));
-    ui->x_value_input->setValidator(regexXValidator);
+  std::vector<QPushButton *> num_buttons = {
+      ui->zero_button,  ui->one_button,  ui->two_button, ui->three_button,
+      ui->four_button,  ui->five_button, ui->six_button, ui->seven_button,
+      ui->eight_button, ui->nine_button};
+  for (QPushButton *num_button : num_buttons) {
+    QObject::connect(num_button, SIGNAL(clicked()), this,
+                     SLOT(numberClicked()));
+  }
 
-std::vector<QPushButton *> num_buttons = {
-    ui->zero_button,  ui->one_button,  ui->two_button, ui->three_button,
-    ui->four_button,  ui->five_button, ui->six_button, ui->seven_button,
-    ui->eight_button, ui->nine_button};
-for (QPushButton *num_button : num_buttons) {
-  QObject::connect(num_button, SIGNAL(clicked()), this, SLOT(numberClicked()));
+  std::vector<QPushButton *> plus_minus_operators = {ui->minus_button,
+                                                     ui->plus_button};
+  for (QPushButton *op_button : plus_minus_operators) {
+    QObject::connect(op_button, SIGNAL(clicked()), this,
+                     SLOT(plusMinusOperatorClicked()));
+  }
+
+  std::vector<QPushButton *> mul_div_operators = {ui->multiply_button,
+                                                  ui->divide_button};
+  for (QPushButton *mul_div_op_button : mul_div_operators) {
+    QObject::connect(mul_div_op_button, SIGNAL(clicked()), this,
+                     SLOT(mulDivOperatorClicked()));
+  }
+
+  std::vector<QPushButton *> math_functions = {
+      ui->tan_button,  ui->cos_button,  ui->sin_button, ui->atan_button,
+      ui->acos_button, ui->asin_button, ui->log_button, ui->ln_button};
+  for (QPushButton *function_button : math_functions) {
+    QObject::connect(function_button, SIGNAL(clicked()), this,
+                     SLOT(mathFunctionClicked()));
+  }
+
+  connect(ui->clear_button, SIGNAL(clicked()), this,
+          SLOT(clearButtonClicked()));
+  connect(ui->point_button, SIGNAL(clicked()), this,
+          SLOT(pointButtonClicked()));
+  connect(ui->open_parenthesis_button, SIGNAL(clicked()), this,
+          SLOT(openParenthesisButtonClicked()));
+  connect(ui->close_parenthesis_button, SIGNAL(clicked()), this,
+          SLOT(closeParenthesisButtonClicked()));
+  connect(ui->x_button, SIGNAL(clicked()), this, SLOT(xButtonClicked()));
+  connect(ui->mod_button, SIGNAL(clicked()), this, SLOT(modButtonClicked()));
+  connect(ui->pow_button, SIGNAL(clicked()), this, SLOT(powButtonClicked()));
+  connect(ui->sqrt_button, SIGNAL(clicked()), this, SLOT(sqrtButtonClicked()));
 }
 
-std::vector<QPushButton *> plus_minus_operators = {ui->minus_button,
-                                                   ui->plus_button};
-for (QPushButton *op_button : plus_minus_operators) {
-  QObject::connect(op_button, SIGNAL(clicked()), this,
-                   SLOT(plusMinusOperatorClicked()));
-}
-
-std::vector<QPushButton *> mul_div_operators = {ui->multiply_button,
-                                                ui->divide_button};
-for (QPushButton *mul_div_op_button : mul_div_operators) {
-  QObject::connect(mul_div_op_button, SIGNAL(clicked()), this,
-                   SLOT(mulDivOperatorClicked()));
-}
-
-std::vector<QPushButton *> math_functions = {
-    ui->tan_button,  ui->cos_button,  ui->sin_button, ui->atan_button,
-    ui->acos_button, ui->asin_button, ui->log_button, ui->ln_button};
-for (QPushButton *function_button : math_functions) {
-  QObject::connect(function_button, SIGNAL(clicked()), this,
-                   SLOT(mathFunctionClicked()));
-}
-
-connect(ui->clear_button, SIGNAL(clicked()), this, SLOT(clearButtonClicked()));
-connect(ui->point_button, SIGNAL(clicked()), this, SLOT(pointButtonClicked()));
-connect(ui->open_parenthesis_button, SIGNAL(clicked()), this, SLOT(openParenthesisButtonClicked()));
-connect(ui->close_parenthesis_button, SIGNAL(clicked()), this, SLOT(closeParenthesisButtonClicked()));
-connect(ui->x_button, SIGNAL(clicked()), this, SLOT(xButtonClicked()));
-connect(ui->mod_button, SIGNAL(clicked()), this, SLOT(modButtonClicked()));
-connect(ui->pow_button, SIGNAL(clicked()), this, SLOT(powButtonClicked()));
-connect(ui->sqrt_button, SIGNAL(clicked()), this, SLOT(sqrtButtonClicked()));
-}
-
-View::~View()
-{
-    delete ui;
-}
+View::~View() { delete ui; }
 
 void View::clearButtonClicked() {
   stringToCalculate.clear();
@@ -67,8 +67,8 @@ void View::clearButtonClicked() {
   x_clicked = false;
   open_parenthesis_clicked = 0;
   flag_first_zero = false;
-//  ui->plot->clearGraphs();
-//  ui->plot->replot();
+  //  ui->plot->clearGraphs();
+  //  ui->plot->replot();
   ui->expression->clear();
 }
 
@@ -279,32 +279,31 @@ void View::xButtonClicked() {
   }
 }
 
-//void View::on_equal_button_clicked() {
-//  if (open_parenthesis_clicked == 0 && stringToCalculate.length() != 0 &&
-//      operator_clicked == false) {
-//    QByteArray mainDisplay = stringToCalculate.toLocal8Bit();
-//    mainData = mainDisplay.data();
-//    xValue = ui->x_value_input->text().toDouble();
-//    ui->expression->setText(stringToCalculate);
-//    int returnCode = parse(mainData, xValue, &resultValue);
-//    if (returnCode == 0) {
-//      ui->display->setText("ERROR");
-//      stringToCalculate.clear();
-//      num_clicked = false;
-//      point_clicked = false;
-//      operator_clicked = false;
-//      x_clicked = false;
-//      open_parenthesis_clicked = 0;
-//    } else {
-//      check_result(resultValue, result_string);
-//      ui->display->setText(result_string);
-//      stringToCalculate.clear();
-//      num_clicked = false;
-//      point_clicked = false;
-//      operator_clicked = false;
-//      x_clicked = false;
-//      open_parenthesis_clicked = 0;
-//    }
-//  }
-//}
-
+// void View::on_equal_button_clicked() {
+//   if (open_parenthesis_clicked == 0 && stringToCalculate.length() != 0 &&
+//       operator_clicked == false) {
+//     QByteArray mainDisplay = stringToCalculate.toLocal8Bit();
+//     mainData = mainDisplay.data();
+//     xValue = ui->x_value_input->text().toDouble();
+//     ui->expression->setText(stringToCalculate);
+//     int returnCode = parse(mainData, xValue, &resultValue);
+//     if (returnCode == 0) {
+//       ui->display->setText("ERROR");
+//       stringToCalculate.clear();
+//       num_clicked = false;
+//       point_clicked = false;
+//       operator_clicked = false;
+//       x_clicked = false;
+//       open_parenthesis_clicked = 0;
+//     } else {
+//       check_result(resultValue, result_string);
+//       ui->display->setText(result_string);
+//       stringToCalculate.clear();
+//       num_clicked = false;
+//       point_clicked = false;
+//       operator_clicked = false;
+//       x_clicked = false;
+//       open_parenthesis_clicked = 0;
+//     }
+//   }
+// }

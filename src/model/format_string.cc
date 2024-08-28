@@ -14,6 +14,7 @@ std::string FormatString::Convert() {
   while (it != wide_str_.end()) {
     if (*it == L'X') {
       strcat(buffer, "x");
+      iter_move = 1;
     } else if (*it == L'÷') {
       strcat(buffer, "/");
     } else if (*it == L'×') {

@@ -11,8 +11,12 @@ void Calculation::Parse() {
     lexeme = expression_.front();
     expression_.pop_front();
     if (lexeme.type == LexemeType::kNumber) {
-      number = std::stod(lexeme.value);
-      numbers.push(number);
+      if (lexeme.value == "x") {
+        numbers.push(x_value_);
+      } else {
+        number = std::stod(lexeme.value);
+        numbers.push(number);
+      }
     }
     if (lexeme.type == LexemeType::kOperator) {
       operation_result = Calculate(lexeme, numbers);
