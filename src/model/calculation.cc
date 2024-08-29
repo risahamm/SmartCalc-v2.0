@@ -23,7 +23,7 @@ void Calculation::Parse() {
       numbers.push(operation_result);
     }
   }
-  calculaton_result_ = std::to_string(numbers.top());
+  calculation_result_ = numbers.top();
   numbers.pop();
 }
 
@@ -80,9 +80,4 @@ double Calculation::Calculate(s21::Lexeme &current_operator,
   return result;
 }
 
-std::string Calculation::GetResult() {
-  if (calculaton_result_ == "NAN") {
-    calculaton_result_ = "Calculation error";
-  }
-  return calculaton_result_;
-}
+double Calculation::GetResult() { return calculation_result_; }

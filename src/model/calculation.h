@@ -14,9 +14,10 @@ class Calculation {
   /**
    * @brief Parametrized constructor
    * @param rpn_list - expression in RPN to be calculated
+   * @param x_val - value of `x` variable
    */
   Calculation(std::list<Lexeme> rpn_list, double x_val)
-      : expression_(rpn_list), calculaton_result_(""), x_value_(x_val) {
+      : expression_(rpn_list), calculation_result_(0), x_value_(x_val) {
     Parse();
   }
 
@@ -27,21 +28,20 @@ class Calculation {
 
   /**
    * @brief Retrieves the result of calculation
-   * @return string representing the result of the last calculation or an error
-   * message if applicable
+   * @return double value representing the result of the calculation
    */
-  std::string GetResult();
+  double GetResult();
 
  private:
   std::list<Lexeme> expression_;   ///< expression in RPN to calculate
-  std::string calculaton_result_;  ///< result of calculations
-  double x_value_;                  ///< value of x
+  double calculation_result_;  ///< result of calculations
+  double x_value_; ///< value of `x`
 
   /**
    * @brief Iterates through the expression, pushing numbers into stack and
    * performing calculations when operators are encountered.
    * @details Results of operations are also pushed into stack. At the end of
-   * the parsing, the final result of the expression is stored as a string in
+   * the parsing, the final result of the expression is stored in
    * calculation_result_
    */
   void Parse();
