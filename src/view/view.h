@@ -18,24 +18,24 @@ class View : public QMainWindow {
   ~View();
 
  public slots:
-  void numberClicked();
-  void plusMinusOperatorClicked();
-  void mulDivOperatorClicked();
-  void mathFunctionClicked();
-  void clearButtonClicked();
-  void openParenthesisButtonClicked();
-  void closeParenthesisButtonClicked();
-  void pointButtonClicked();
-  void modButtonClicked();
-  void powButtonClicked();
-  void sqrtButtonClicked();
-  void xButtonClicked();
-  // void equalButtonClicked();
-  // void buildPlot();
+  void NumberClicked();
+  void PlusMinusOperatorClicked();
+  void MulDivOperatorClicked();
+  void MathFunctionClicked();
+  void ClearButtonClicked();
+  void OpenParenthesisButtonClicked();
+  void CloseParenthesisButtonClicked();
+  void PointButtonClicked();
+  void ModButtonClicked();
+  void PowButtonClicked();
+  void SqrtButtonClicked();
+  void XButtonClicked();
+  // void EqualButtonClicked();
+  // void BuildPlot();
 
  private:
   Ui::View *ui;
-  QString stringToCalculate;
+  QString string_to_calculate;
   bool num_clicked = false;
   bool point_clicked = false;
   bool operator_clicked = false;

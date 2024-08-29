@@ -25,6 +25,7 @@ set(PROJECT_SOURCES
         view/view.ui
         view/qcustomplot.h
         view/qcustomplot.cc
+        resourses.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

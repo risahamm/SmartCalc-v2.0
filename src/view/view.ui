@@ -67,12 +67,20 @@
       <height>650</height>
      </size>
     </property>
+    <property name="font">
+     <font>
+      <family>Helvetica</family>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QTabBar::tab {
+	margin-top: 5px;
       background-color: #D3D3D3;
-      border: 1px solid #4973b4;
+      /*border: 1px solid #4973b4;*/
       border-radius: 5%;
-      padding: 2px;
+      padding: 5px;
+	 padding-left: 10px;
+      padding-right: 10px;
       font: 14pt;
       color: #000000;
       }
@@ -131,7 +139,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -139,7 +147,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -174,7 +182,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -182,7 +190,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -217,7 +225,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -225,7 +233,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -260,7 +268,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -268,7 +276,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -303,7 +311,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -311,7 +319,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -346,7 +354,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -354,7 +362,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -389,7 +397,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -397,7 +405,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -432,7 +440,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -440,7 +448,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -475,7 +483,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -483,7 +491,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -518,7 +526,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -526,7 +534,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -561,7 +569,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -569,7 +577,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -604,7 +612,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -612,7 +620,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -655,7 +663,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -663,7 +671,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -698,7 +706,7 @@
         border-width: 2px;
         border-radius: 30%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -706,7 +714,7 @@
         border-width: 2px;
         border-radius: 30%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -741,7 +749,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -749,7 +757,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -784,7 +792,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -792,7 +800,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -827,7 +835,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -835,7 +843,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -870,7 +878,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -878,7 +886,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -913,7 +921,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -921,7 +929,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -956,7 +964,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -964,7 +972,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -1003,7 +1011,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -1011,7 +1019,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -1046,7 +1054,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -1054,7 +1062,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -1089,7 +1097,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -1097,7 +1105,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -1132,7 +1140,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -1140,7 +1148,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -1175,7 +1183,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -1183,7 +1191,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -1218,7 +1226,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -1226,7 +1234,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -1261,7 +1269,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -1269,7 +1277,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -1304,7 +1312,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #4169E1;
         }
         QPushButton:pressed{
@@ -1312,7 +1320,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #4169E1;
         }</string>
       </property>
@@ -1337,7 +1345,7 @@
         background-color: #F5F5F5;
         border-width: 2px;
         border-radius: 10%;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         padding: 6px;
         }
@@ -1347,7 +1355,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 20pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -1355,12 +1363,12 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 20pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
       <property name="text">
-       <string>X</string>
+       <string>𝑥</string>
       </property>
      </widget>
      <widget class="QPushButton" name="two_button">
@@ -1390,7 +1398,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -1398,7 +1406,7 @@
         border-width: 2px;
         border-radius: 30px;
         padding: 6px;
-        font: 24pt &quot;.AppleSystemUIFont&quot;;
+        font: 26pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -1433,7 +1441,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }
         QPushButton:pressed{
@@ -1441,7 +1449,7 @@
         border-width: 2px;
         border-radius: 10%;
         padding: 6px;
-        font: 16pt &quot;.AppleSystemUIFont&quot;;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
         color: #000000;
         }</string>
       </property>
@@ -1455,7 +1463,7 @@
         <x>5</x>
         <y>0</y>
         <width>265</width>
-        <height>151</height>
+        <height>71</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1477,9 +1485,9 @@
      <widget class="QLineEdit" name="x_value_input">
       <property name="geometry">
        <rect>
-        <x>205</x>
-        <y>160</y>
-        <width>60</width>
+        <x>75</x>
+        <y>120</y>
+        <width>191</width>
         <height>35</height>
        </rect>
       </property>
@@ -1503,6 +1511,114 @@
       </property>
       <property name="placeholderText">
        <string>0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="x_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>60</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+        background-color: #DCDCDC;
+        border-width: 2px;
+        border-radius: 10%;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
+        color: #000000;
+        padding: 6px;
+        }</string>
+      </property>
+      <property name="text">
+       <string>𝑥 =</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="e_button">
+      <property name="geometry">
+       <rect>
+        <x>205</x>
+        <y>160</y>
+        <width>60</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+        background-color: #F5F5F5;
+        border-width: 2px;
+        border-radius: 10%;
+        font: 18pt &quot;.AppleSystemUIFont&quot;;
+        color: #000000;
+        padding: 6px;
+        }
+
+        QPushButton:hover{
+        background-color: #DCDCDC;
+        border-width: 2px;
+        border-radius: 10%;
+        padding: 6px;
+        font: 20pt &quot;.AppleSystemUIFont&quot;;
+        color: #000000;
+        }
+        QPushButton:pressed{
+        background-color: #D3D3D3;
+        border-width: 2px;
+        border-radius: 10%;
+        padding: 6px;
+        font: 20pt &quot;.AppleSystemUIFont&quot;;
+        color: #000000;
+        }</string>
+      </property>
+      <property name="text">
+       <string>e</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="backspace_button">
+      <property name="geometry">
+       <rect>
+        <x>206</x>
+        <y>80</y>
+        <width>60</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+        background-color: none;
+        border: none;
+        }
+
+QPushButton:hover{
+        background-color: #DCDCDC;
+        border-radius: 10%;
+        }
+
+QPushButton:pressed{
+        background-color: #D3D3D3;
+        border-radius: 10%;
+        }</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resourses.qrc">
+        <normaloff>:/pics/backspace.svg</normaloff>:/pics/backspace.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>25</height>
+       </size>
       </property>
      </widget>
     </widget>
@@ -1534,7 +1650,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-        background-color: #B0C4DE;
+        background-color: #ADD8E6;
         border-width: 2px;
         border-radius: 10%;
         font: 14pt &quot;.AppleSystemUIFont&quot;;
@@ -1560,7 +1676,7 @@
         }</string>
       </property>
       <property name="text">
-       <string>ПОСТРОИТЬ</string>
+       <string>PLOT</string>
       </property>
      </widget>
      <widget class="QLabel" name="expression">
@@ -1913,6 +2029,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../resourses.qrc"/>
+ </resources>
  <connections/>
 </ui>
