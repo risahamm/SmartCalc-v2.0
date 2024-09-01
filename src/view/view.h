@@ -32,13 +32,14 @@ class View : public QMainWindow {
   void SqrtButtonClicked();
   void XButtonClicked();
   void EButtonClicked();
+  void BackspaceClicked();
   // void EqualButtonClicked();
   // void BuildPlot();
 
  private:
   Ui::View *ui;
   QString string_to_calculate;
-  QString expression_string;
+  QString string_to_show;
   bool num_clicked = false;
   bool point_clicked = false;
   bool operator_clicked = false;
@@ -46,7 +47,15 @@ class View : public QMainWindow {
   bool x_clicked = false;
   bool e_clicked = false;
   bool flag_first_zero = false;
-  QStack<unsigned int> last_lexeme_size;
-  QStack<std::pair<std::string, bool>> flags;
+
+  void ChopString(size_t number_to_chop);
+  bool GetPointStatus(QString::iterator str);
+  bool GetOperatorStatus(QString::iterator str);
+  bool GetZeroStatus(QString::iterator str);
+  bool GetNumStatus(QString::iterator str);
+  bool GetXStatus(QString::iterator str);
+  bool GetEStatus(QString::iterator str);
+
+  void GetAllFlags();
 };
 #endif  // VIEW_H

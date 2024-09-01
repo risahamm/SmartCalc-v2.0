@@ -19,7 +19,7 @@ int main() {
 ////
 //  cout << "end " << c.GetResult() << endl;
 
-string str = "6e";
+string str = "6e2";
 double x = 0;
 x = std::stod(str);
 cout << "x = " << x << endl;
