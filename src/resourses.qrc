@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pics/backspace.svg</file>
+    </qresource>
+</RCC>

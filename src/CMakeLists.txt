@@ -23,6 +23,9 @@ set(PROJECT_SOURCES
         view/view.cc
         view/view.h
         view/view.ui
+        view/graph.h
+        view/graph.cc
+        view/graph.ui
         view/qcustomplot.h
         view/qcustomplot.cc
         view/format_string.h

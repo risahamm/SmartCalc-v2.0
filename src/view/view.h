@@ -1,12 +1,13 @@
 #ifndef VIEW_H
 #define VIEW_H
 
-#include <qcustomplot.h>
+//#include <qcustomplot.h>
 
 #include <QMainWindow>
 #include <QStack>
 
 #include "format_string.h"
+#include "graph.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -37,10 +38,11 @@ class View : public QMainWindow {
   void EButtonClicked();
   void BackspaceClicked();
   void EqualButtonClicked();
-  // void BuildPlot();
+  void BuildPlot();
 
  private:
   Ui::View *ui_;
+  Graph *graph;
   QString string_to_calculate_;
   QString string_to_show_;
   bool num_clicked_ = false;

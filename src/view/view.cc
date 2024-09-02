@@ -60,6 +60,8 @@ View::View(QWidget *parent) : QMainWindow(parent), ui_(new Ui::View) {
           SLOT(BackspaceClicked()));
   connect(ui_->equal_button, SIGNAL(clicked()), this,
           SLOT(EqualButtonClicked()));
+  connect(ui_->create_plot, SIGNAL(clicked()), this,
+          SLOT(BuildPlot()));
 }
 
 View::~View() { delete ui_; }
@@ -78,7 +80,7 @@ void View::ClearButtonClicked() {
   e_clicked_ = false;
   //  ui_->plot->clearGraphs();
   //  ui_->plot->replot();
-  ui_->expression->clear();
+//  ui_->dispaly->clear();
   GetAllFlags();
 }
 
@@ -505,6 +507,12 @@ void View::EqualButtonClicked() {
     s21::FormatString formatted_str(string_to_calculate_);
     std::cout << "formatted_str: " << formatted_str.GetString() << std::endl;
   }
+}
+
+void View::BuildPlot() {
+
+    graph = new Graph(this);
+    graph->show();
 }
 
 void View::GetAllFlags() {
