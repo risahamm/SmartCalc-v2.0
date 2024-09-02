@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <qcustomplot.h>
 #include <QStack>
+#include "format_string.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -33,20 +34,20 @@ class View : public QMainWindow {
   void XButtonClicked();
   void EButtonClicked();
   void BackspaceClicked();
-  // void EqualButtonClicked();
+  void EqualButtonClicked();
   // void BuildPlot();
 
  private:
-  Ui::View *ui;
-  QString string_to_calculate;
-  QString string_to_show;
-  bool num_clicked = false;
-  bool point_clicked = false;
-  bool operator_clicked = false;
-  int open_parenthesis_clicked = 0;
-  bool x_clicked = false;
-  bool e_clicked = false;
-  bool flag_first_zero = false;
+  Ui::View *ui_;
+  QString string_to_calculate_;
+  QString string_to_show_;
+  bool num_clicked_ = false;
+  bool point_clicked_ = false;
+  bool operator_clicked_ = false;
+  bool x_clicked_ = false;
+  bool e_clicked_ = false;
+  bool flag_first_zero_ = false;
+  int open_parenthesis_clicked_ = 0;
 
   void ChopString(size_t number_to_chop);
   bool GetPointStatus(QString::iterator str);

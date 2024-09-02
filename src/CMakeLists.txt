@@ -25,6 +25,8 @@ set(PROJECT_SOURCES
         view/view.ui
         view/qcustomplot.h
         view/qcustomplot.cc
+        view/format_string.h
+        view/format_string.cc
         resourses.qrc
 )
 
