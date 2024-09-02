@@ -513,6 +513,7 @@ void View::BuildPlot() {
 
     graph = new Graph(this);
     graph->show();
+    graph->setWindowTitle("Graph");
 }
 
 void View::GetAllFlags() {
