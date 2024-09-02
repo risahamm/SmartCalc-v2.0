@@ -58,7 +58,8 @@ View::View(QWidget *parent) : QMainWindow(parent), ui_(new Ui::View) {
   connect(ui_->e_button, SIGNAL(clicked()), this, SLOT(EButtonClicked()));
   connect(ui_->backspace_button, SIGNAL(clicked()), this,
           SLOT(BackspaceClicked()));
-  connect(ui_->equal_button, SIGNAL(clicked()), this, SLOT(EqualButtonClicked()));
+  connect(ui_->equal_button, SIGNAL(clicked()), this,
+          SLOT(EqualButtonClicked()));
 }
 
 View::~View() { delete ui_; }
@@ -175,7 +176,8 @@ void View::PlusMinusOperatorClicked() {
 
 void View::MulDivOperatorClicked() {
   if (operator_clicked_ == false && string_to_calculate_.length() != 0 &&
-      string_to_calculate_.back() != '(' && string_to_calculate_.back() != '.') {
+      string_to_calculate_.back() != '(' &&
+      string_to_calculate_.back() != '.') {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
 
     if (button->text() == "×") {
@@ -275,7 +277,8 @@ void View::PointButtonClicked() {
 }
 
 void View::ModButtonClicked() {
-  if (operator_clicked_ == false && (num_clicked_ == true || x_clicked_ == true) &&
+  if (operator_clicked_ == false &&
+      (num_clicked_ == true || x_clicked_ == true) &&
       string_to_calculate_.back() != '.' && e_clicked_ == false) {
     string_to_calculate_ += "%";
     string_to_show_ += "%";
@@ -289,8 +292,8 @@ void View::ModButtonClicked() {
 }
 
 void View::PowButtonClicked() {
-  if (string_to_calculate_.length() != 0 && string_to_calculate_.back() != '.' &&
-      e_clicked_ == false &&
+  if (string_to_calculate_.length() != 0 &&
+      string_to_calculate_.back() != '.' && e_clicked_ == false &&
       (num_clicked_ == true || string_to_calculate_.back() == ')' ||
        string_to_calculate_.back() == 'x')) {
     string_to_calculate_ += "^(";
@@ -313,7 +316,8 @@ void View::SqrtButtonClicked() {
     operator_clicked_ = false;
 
   } else if (string_to_calculate_.length() != 0 &&
-             (operator_clicked_ == true || string_to_calculate_.back() == '(')) {
+             (operator_clicked_ == true ||
+              string_to_calculate_.back() == '(')) {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
     string_to_calculate_ += "r(";
     string_to_show_ += button->text() + "(";
@@ -495,23 +499,22 @@ bool View::GetEStatus(QString::iterator str) {
   return false;
 }
 
- void View::EqualButtonClicked() {
-   if (open_parenthesis_clicked_ == 0 && string_to_calculate_.length() != 0 &&
-       operator_clicked_ == false) {
+void View::EqualButtonClicked() {
+  if (open_parenthesis_clicked_ == 0 && string_to_calculate_.length() != 0 &&
+      operator_clicked_ == false) {
+    s21::FormatString formatted_str(string_to_calculate_);
+    std::cout << "formatted_str: " << formatted_str.GetString() << std::endl;
+  }
+}
 
-       s21::FormatString formatted_str(string_to_calculate_);
-       std::cout << "formatted_str: " << formatted_str.GetString() << std::endl;
-   }
- }
-
- void View::GetAllFlags() {
-   std::cout << "string: " << string_to_calculate_.toStdString() << std::endl;
-   std::cout << "num_clicked_: " << num_clicked_ << std::endl;
-   std::cout << "point_clicked_: " << point_clicked_ << std::endl;
-   std::cout << "operator_clicked_: " << operator_clicked_ << std::endl;
-   std::cout << "open_parenthesis_clicked_: " << open_parenthesis_clicked_
-             << std::endl;
-   std::cout << "x_clicked_: " << x_clicked_ << std::endl;
-   std::cout << "e_clicked_: " << e_clicked_ << std::endl;
-   std::cout << "flag_first_zero_: " << flag_first_zero_ << std::endl;
- }
+void View::GetAllFlags() {
+  std::cout << "string: " << string_to_calculate_.toStdString() << std::endl;
+  std::cout << "num_clicked_: " << num_clicked_ << std::endl;
+  std::cout << "point_clicked_: " << point_clicked_ << std::endl;
+  std::cout << "operator_clicked_: " << operator_clicked_ << std::endl;
+  std::cout << "open_parenthesis_clicked_: " << open_parenthesis_clicked_
+            << std::endl;
+  std::cout << "x_clicked_: " << x_clicked_ << std::endl;
+  std::cout << "e_clicked_: " << e_clicked_ << std::endl;
+  std::cout << "flag_first_zero_: " << flag_first_zero_ << std::endl;
+}

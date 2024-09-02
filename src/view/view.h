@@ -1,9 +1,11 @@
 #ifndef VIEW_H
 #define VIEW_H
 
-#include <QMainWindow>
 #include <qcustomplot.h>
+
+#include <QMainWindow>
 #include <QStack>
+
 #include "format_string.h"
 
 QT_BEGIN_NAMESPACE

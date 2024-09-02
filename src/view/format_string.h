@@ -1,9 +1,9 @@
 #ifndef CPP3_SMARTCALC_V2_0_1_SRC_VIEW_FORMAT_STRING_H
 #define CPP3_SMARTCALC_V2_0_1_SRC_VIEW_FORMAT_STRING_H
 
+#include <QString>
 #include <locale>
 #include <string>
-#include <QString>
 
 namespace s21 {
 
@@ -37,7 +37,7 @@ class FormatString {
 
  private:
   std::string basic_str_;  ///< result of convertion
-  QString q_str_;  ///< input string to be converted
+  QString q_str_;          ///< input string to be converted
 
   /**
    * @brief Converts QString into std::string suitable for calculation
