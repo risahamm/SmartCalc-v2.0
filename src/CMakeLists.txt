@@ -30,6 +30,12 @@ set(PROJECT_SOURCES
         view/qcustomplot.cc
         view/format_string.h
         view/format_string.cc
+        controller/controller.h
+        model/calculation.h
+        model/calculation.cc
+        model/lexeme.h
+        model/reverse_polish_notation.h
+        model/reverse_polish_notation.cc
         resourses.qrc
 )
 

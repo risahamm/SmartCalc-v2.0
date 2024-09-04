@@ -4,26 +4,23 @@
 #include <list>
 #include <stack>
 #include <string>
+
 #include "lexeme.h"
 
 namespace s21 {
 
 /**
- * @brief Class for converting an expression into Reversed Polish Notation (RPN).
- * @details This class takes a string expression, splits it into lexemes and converts them into RPN.
- * The result is stored in std::list container.
+ * @brief Class for converting an expression into Reversed Polish Notation
+ * (RPN).
+ * @details This class takes a string expression, splits it into lexemes and
+ * converts them into RPN. The result is stored in std::list container.
  */
 class ReversePolishNotation {
  public:
-
   /**
-   * @brief Parametrized constructor
-   * @param input_str - string containing an expression to be converted
+   * @brief Default constructor
    */
-  ReversePolishNotation(std::string const input_str) : str_(input_str) {
-    rpn_list_ = Reverse();
-  }
-
+  ReversePolishNotation() = default;
   /**
    * @brief Default destructor
    */
@@ -31,61 +28,62 @@ class ReversePolishNotation {
 
   /**
    * @brief Gets a list of lexemes in RPN
-   * @return std::list<Lexeme> list of lexemes representing the expression in RPN
+   * @return std::list<Lexeme> list of lexemes representing the expression in
+   * RPN
    */
   std::list<Lexeme> GetRpnList() { return rpn_list_; };
 
+  /**
+   * @brief Converts a string into a list of separate lexemes converted into RPN
+   * @param str - expression to be converted into RPN
+   */
+  void Convert(std::string str);
+
  private:
-  std::list<Lexeme> rpn_list_; ///< list of separate lexemes converted into RPN
-  std::string str_; ///< input string containing an expression to calculate
+  std::list<Lexeme> rpn_list_;  ///< list of separate lexemes converted into RPN
 
   /**
-  * @brief Converts a string into a list of separate lexemes converted into RPN
-  * @return std::list of lexemes converted into RPN
-  */
-  std::list<Lexeme> Reverse();
-
-  /**
-  * @brief Parses a number as a single lexeme and pushes it to the RPN List
-  * @param it - pointer to the first digit of a number
-  * @return value to move the iterator in the string after parsing a lexeme
-  */
+   * @brief Parses a number as a single lexeme and pushes it to the RPN List
+   * @param it - pointer to the first digit of a number
+   * @return value to move the iterator in the string after parsing a lexeme
+   */
   size_t ParseNumber(std::string::iterator it);
 
   /**
-  * @brief Parses an operator and pushes it to the stack
-  * @param operators_stack - stack of operators
-  * @param it - pointer to an element in the string
-  */
+   * @brief Parses an operator and pushes it to the stack
+   * @param operators_stack - stack of operators
+   * @param it - pointer to an element in the string
+   * @param str - input string
+   */
   void ParseOperator(std::stack<Lexeme> &operators_stack,
-                     std::string::iterator it);
+                     std::string::iterator it, std::string &str);
 
   /**
-  * @brief Pops and adds to RPN list everything until '(' is met
-  * @param operators_stack - stack of operators
-  */
+   * @brief Pops and adds to RPN list everything until '(' is met
+   * @param operators_stack - stack of operators
+   */
   void CloseParenth(std::stack<Lexeme> &operators_stack);
 
-
   /**
-  * @brief Pushes opening parenthesis to the stack
-  * @param operators_stack
-  */
+   * @brief Pushes opening parenthesis to the stack
+   * @param operators_stack
+   */
   void PushOpenParenth(std::stack<Lexeme> &operators_stack);
 
   /**
-  * @brief Checks the priority of the element
-  * @param it - iterator to the element
-  * @return Priority of the element
-  */
+   * @brief Checks the priority of the element
+   * @param it - iterator to the element
+   * @return Priority of the element
+   */
   Priority GetPriority(std::string::iterator it);
 
   /**
-  * @brief Checks if `-` or `+` is unary
-  * @param it - iterator to the element
-  * @return true if unary, otherwise false
-  */
-  bool IsUnary(std::string::iterator it);
+   * @brief Checks if `-` or `+` is unary
+   * @param it - iterator to the element
+   * @param str - input string
+   * @return true if unary, otherwise false
+   */
+  bool IsUnary(std::string::iterator it, std::string &str);
 
 };  // class ReversePolishNotation
 

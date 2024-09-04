@@ -4,7 +4,8 @@
 
 #include "./ui_view.h"
 
-View::View(QWidget *parent) : QMainWindow(parent), ui_(new Ui::View) {
+View::View(QWidget *parent, s21::Controller *controller)
+    : QMainWindow(parent), controller_(controller), ui_(new Ui::View) {
   ui_->setupUi(this);
 
   QRegularExpressionValidator *regexXValidator =
@@ -60,8 +61,7 @@ View::View(QWidget *parent) : QMainWindow(parent), ui_(new Ui::View) {
           SLOT(BackspaceClicked()));
   connect(ui_->equal_button, SIGNAL(clicked()), this,
           SLOT(EqualButtonClicked()));
-  connect(ui_->create_plot, SIGNAL(clicked()), this,
-          SLOT(BuildPlot()));
+  connect(ui_->create_plot, SIGNAL(clicked()), this, SLOT(BuildPlot()));
 }
 
 View::~View() { delete ui_; }
@@ -80,7 +80,7 @@ void View::ClearButtonClicked() {
   e_clicked_ = false;
   //  ui_->plot->clearGraphs();
   //  ui_->plot->replot();
-//  ui_->dispaly->clear();
+  //  ui_->dispaly->clear();
   GetAllFlags();
 }
 
@@ -505,16 +505,45 @@ void View::EqualButtonClicked() {
   if (open_parenthesis_clicked_ == 0 && string_to_calculate_.length() != 0 &&
       operator_clicked_ == false) {
     s21::FormatString formatted_str(string_to_calculate_);
+    double x_value = ui_->x_value_input->text().toDouble();
     std::cout << "formatted_str: " << formatted_str.GetString() << std::endl;
+    double result = controller_->Calculate(formatted_str.GetString(), x_value);
+
+    SetResult(result);
   }
 }
 
-void View::BuildPlot() {
+void View::SetResult(double &result) {
+  /* clear all flags */
+  ClearButtonClicked();
 
-    graph = new Graph(this);
-    graph->show();
-    graph->setWindowTitle("Graph");
+  if (std::isinf(result) || std::isnan(result)) {
+    ui_->display->setText("calculation error");
+
+  } else {
+    double truncated_result = std::trunc(result);
+
+    if (truncated_result == result) {
+      string_to_show_ = QString::number(result, 'f', 0);
+      string_to_calculate_ = QString::number(result, 'f', 0);
+
+    } else {
+      string_to_show_ = QString::number(result, 'f', 7);
+      string_to_calculate_ = QString::number(result, 'f', 7);
+      point_clicked_ = true;
+    }
+
+    num_clicked_ = true;
+
+    if (result != 0) {
+      flag_first_zero_ = true;
+    }
+
+    ui_->display->setText(string_to_show_);
+  }
 }
+
+void View::BuildPlot() { graph_ = new Graph(this); }
 
 void View::GetAllFlags() {
   std::cout << "string: " << string_to_calculate_.toStdString() << std::endl;

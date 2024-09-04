@@ -4,20 +4,27 @@
 #include <QDialog>
 #include <qcustomplot.h>
 
+
 namespace Ui {
 class Graph;
 }
+
+class View;
 
 class Graph : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Graph(QWidget *parent = nullptr);
+
+    Graph(QWidget *parent = nullptr);
     ~Graph();
+
 
 private:
     Ui::Graph *ui_;
+    static bool instance_;
 };
+
 
 #endif // GRAPH_H

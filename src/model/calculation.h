@@ -6,20 +6,16 @@
 #include <string>
 
 #include "lexeme.h"
+#include "reverse_polish_notation.h"
 
 namespace s21 {
 
 class Calculation {
  public:
   /**
-   * @brief Parametrized constructor
-   * @param rpn_list - expression in RPN to be calculated
-   * @param x_val - value of `x` variable
+   * @brief Default constructor
    */
-  Calculation(std::list<Lexeme> rpn_list, double x_val)
-      : expression_(rpn_list), calculation_result_(0), x_value_(x_val) {
-    Parse();
-  }
+  Calculation(ReversePolishNotation &rpn) : rpn_(rpn) {}
 
   /**
    * @brief Default destructor
@@ -32,19 +28,21 @@ class Calculation {
    */
   double GetResult();
 
- private:
-  std::list<Lexeme> expression_;   ///< expression in RPN to calculate
-  double calculation_result_;  ///< result of calculations
-  double x_value_; ///< value of `x`
-
   /**
    * @brief Iterates through the expression, pushing numbers into stack and
    * performing calculations when operators are encountered.
    * @details Results of operations are also pushed into stack. At the end of
    * the parsing, the final result of the expression is stored in
    * calculation_result_
+   * @param expression - input expression to be calculated
+   * @param x_value - value of x variable
    */
-  void Parse();
+  void Parse(std::string expression, double x_value);
+
+ private:
+  ReversePolishNotation rpn_;     ///< value of x variable
+  std::list<Lexeme> expression_;  ///< expression in RPN to calculate
+  double calculation_result_;     ///< result of calculations
 
   /**
    * @brief Performs arithmetic and trigonometric calculations based on the

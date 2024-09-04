@@ -1,13 +1,12 @@
 #ifndef VIEW_H
 #define VIEW_H
 
-//#include <qcustomplot.h>
-
 #include <QMainWindow>
 #include <QStack>
 
 #include "format_string.h"
 #include "graph.h"
+#include "../controller/controller.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,7 +18,7 @@ class View : public QMainWindow {
   Q_OBJECT
 
  public:
-  View(QWidget *parent = nullptr);
+  View(QWidget *parent = nullptr, s21::Controller *controller = nullptr);
   ~View();
 
  public slots:
@@ -42,7 +41,8 @@ class View : public QMainWindow {
 
  private:
   Ui::View *ui_;
-  Graph *graph;
+  Graph *graph_;
+  s21::Controller *controller_;
   QString string_to_calculate_;
   QString string_to_show_;
   bool num_clicked_ = false;
@@ -60,7 +60,9 @@ class View : public QMainWindow {
   bool GetNumStatus(QString::iterator str);
   bool GetXStatus(QString::iterator str);
   bool GetEStatus(QString::iterator str);
+  void SetResult(double &result);
 
   void GetAllFlags();
 };
+
 #endif  // VIEW_H

@@ -2,14 +2,14 @@
 
 using namespace s21;
 
-std::list<Lexeme> ReversePolishNotation::Reverse() {
+void ReversePolishNotation::Convert(std::string str) {
   std::stack<Lexeme> operators;
 
   size_t move_iter = 1;  ///< value to move the iterator
                          ///< in the string after parsing a lexeme
 
-  std::string::iterator symbol = str_.begin();
-  while (symbol != str_.end()) {
+  std::string::iterator symbol = str.begin();
+  while (symbol != str.end()) {
     move_iter = 1;
     if (std::isdigit(*symbol) || *symbol == 'x') {
       move_iter = ParseNumber(symbol);
@@ -18,7 +18,7 @@ std::list<Lexeme> ReversePolishNotation::Reverse() {
     } else if (*symbol == ')') {
       CloseParenth(operators);
     } else {
-      ParseOperator(operators, symbol);
+      ParseOperator(operators, symbol, str);
     }
     symbol += move_iter;
   }
@@ -26,7 +26,6 @@ std::list<Lexeme> ReversePolishNotation::Reverse() {
     rpn_list_.push_back(operators.top());
     operators.pop();
   }
-  return rpn_list_;
 }
 
 size_t ReversePolishNotation::ParseNumber(std::string::iterator it) {
@@ -47,11 +46,11 @@ size_t ReversePolishNotation::ParseNumber(std::string::iterator it) {
 }
 
 void ReversePolishNotation::ParseOperator(std::stack<Lexeme> &operators_stack,
-                                          std::string::iterator it) {
+                                          std::string::iterator it, std::string &str) {
   Lexeme new_element(*it, GetPriority(it), LexemeType::kOperator);
 
   /* if `+` or `-` is an unary sign, push 0 to RPN list */
-  if (IsUnary(it)) {
+  if (IsUnary(it, str)) {
     Lexeme add_zero('0', Priority::kPriority_0, LexemeType::kNumber);
     rpn_list_.push_back(add_zero);
   }
@@ -113,10 +112,10 @@ Priority ReversePolishNotation::GetPriority(std::string::iterator it) {
   return element_priority;
 }
 
-bool ReversePolishNotation::IsUnary(std::string::iterator it) {
+bool ReversePolishNotation::IsUnary(std::string::iterator it, std::string &str) {
   if (*it == '+' || *it == '-') {
     /* if the operator is first in the string */
-    if (*it == *str_.begin()) {
+    if (*it == *str.begin()) {
       return true;
     }
 

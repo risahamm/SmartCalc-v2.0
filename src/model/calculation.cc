@@ -2,7 +2,11 @@
 
 using namespace s21;
 
-void Calculation::Parse() {
+void Calculation::Parse(std::string expression, double x_value) {
+
+  rpn_.Convert(expression);
+
+  expression_ = rpn_.GetRpnList();
   double operation_result = 0;
   std::stack<double> numbers;
   Lexeme lexeme;
@@ -12,7 +16,7 @@ void Calculation::Parse() {
     expression_.pop_front();
     if (lexeme.type == LexemeType::kNumber) {
       if (lexeme.value == "x") {
-        numbers.push(x_value_);
+        numbers.push(x_value);
       } else {
         number = std::stod(lexeme.value);
         numbers.push(number);
