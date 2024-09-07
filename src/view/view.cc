@@ -61,7 +61,7 @@ View::View(QWidget *parent, s21::Controller *controller)
           SLOT(BackspaceClicked()));
   connect(ui_->equal_button, SIGNAL(clicked()), this,
           SLOT(EqualButtonClicked()));
-  connect(ui_->create_plot, SIGNAL(clicked()), this, SLOT(BuildPlot()));
+  connect(ui_->graphing, SIGNAL(clicked()), this, SLOT(OpenGraphWindow()));
 }
 
 View::~View() { delete ui_; }
@@ -295,7 +295,7 @@ void View::ModButtonClicked() {
 
 void View::PowButtonClicked() {
   if (string_to_calculate_.length() != 0 &&
-      string_to_calculate_.back() != '.' && e_clicked_ == false &&
+      string_to_calculate_.back() != '.' && string_to_calculate_.back() != 'e' &&
       (num_clicked_ == true || string_to_calculate_.back() == ')' ||
        string_to_calculate_.back() == 'x')) {
     string_to_calculate_ += "^(";
@@ -524,15 +524,19 @@ void View::SetResult(double &result) {
     double truncated_result = std::trunc(result);
 
     if (truncated_result == result) {
-      string_to_show_ = QString::number(result, 'f', 0);
       string_to_calculate_ = QString::number(result, 'f', 0);
 
     } else {
-      string_to_show_ = QString::number(result, 'f', 7);
       string_to_calculate_ = QString::number(result, 'f', 7);
       point_clicked_ = true;
     }
 
+    if (string_to_calculate_.length() >= 21) {
+        string_to_calculate_ = QString::number(result, 'e', 0);
+        e_clicked_ = true;
+    }
+
+    string_to_show_ = string_to_calculate_;
     num_clicked_ = true;
 
     if (result != 0) {
@@ -543,9 +547,38 @@ void View::SetResult(double &result) {
   }
 }
 
-void View::BuildPlot() { graph_ = new Graph(this); }
+void View::OpenGraphWindow() {
+
+    if (!graph_) {
+
+    graph_ = new Graph(this);
+
+    int main_window_x = this->x();
+    int main_window_y = this->y();
+
+    connect(graph_, &Graph::finished, this, &View::DialogClosed);
+
+    graph_->expression = string_to_show_;
+    graph_->BuildPlot();
+
+    graph_->move(main_window_x + this->width() + 20, main_window_y);
+    graph_->show();
+
+    } else {
+        graph_->expression = string_to_show_;
+        graph_->BuildPlot();
+        graph_->raise();
+        graph_->activateWindow();
+    }
+
+}
+
+void View::DialogClosed() {
+    graph_ = nullptr;
+}
 
 void View::GetAllFlags() {
+  std::cout << "-----------------------------" << std::endl;
   std::cout << "string: " << string_to_calculate_.toStdString() << std::endl;
   std::cout << "num_clicked_: " << num_clicked_ << std::endl;
   std::cout << "point_clicked_: " << point_clicked_ << std::endl;

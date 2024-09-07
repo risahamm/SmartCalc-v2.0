@@ -1,7 +1,8 @@
-#ifndef CPP3_SMARTCALC_V2_0_1_CONTROLLER_H
-#define CPP3_SMARTCALC_V2_0_1_CONTROLLER_H
+#ifndef CPP3_SMARTCALC_V2_0_1_SRC_CONTROLLER_CONTROLLER_H
+#define CPP3_SMARTCALC_V2_0_1_SRC_CONTROLLER_CONTROLLER_H
 
 #include "../model/calculation.h"
+//#include "../model/plot_graph.h"
 
 namespace s21 {
 
@@ -15,11 +16,16 @@ class Controller {
     return model_->GetResult();
   }
 
+//  std::vector<std::pair<double, double>> CalculateCoordinates(std::string &expression, std::pair<double, double> x_range) {
+//    return plot_.CalculateY(expression, x_range);
+//  }
+
  private:
   Calculation *model_;
+//  PlotGraph plot_;
 
 };  // class controller
 
 }  // namespace s21
 
-#endif  // CPP3_SMARTCALC_V2_0_1_CONTROLLER_H
+#endif  // CPP3_SMARTCALC_V2_0_1_SRC_CONTROLLER_CONTROLLER_H

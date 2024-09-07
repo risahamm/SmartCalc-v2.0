@@ -6,23 +6,23 @@
 using namespace std;
 
 int main() {
-
-//  wstring str = L"(2+3)×cos(100-100)";
-//  wstring str = L"";
-
-
-////
-//  s21::ReversePolishNotation b(a.GetString());
-////
-//  s21::Calculation c(b.GetRpnList(), 2);
-////
-//  cout << "end " << c.GetResult() << endl;
-
-string str = "6e2";
-double x = 0;
-x = std::stod(str);
-cout << "x = " << x << endl;
-
-
+//
+//
+  s21::Calculation c;
+//
+  std::string str = "9-3.3+9e*3";
+//
+  c.Parse(str, 0);
+//
+//
+//
+  cout << "end " << c.GetResult() << endl;
+//
+////string str = "6e2";
+////double x = 0;
+////x = std::stod(str);
+////cout << "x = " << x << endl;
+//
+//
 }
 

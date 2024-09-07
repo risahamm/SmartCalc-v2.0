@@ -6,8 +6,8 @@
 #include "view/view.h"
 
 int main(int argc, char *argv[]) {
-  s21::ReversePolishNotation rpn;
-  s21::Calculation calculation(rpn);
+
+  s21::Calculation calculation;
   s21::Controller controller(&calculation);
 
 

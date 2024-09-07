@@ -37,7 +37,7 @@ class ReversePolishNotation {
    * @brief Converts a string into a list of separate lexemes converted into RPN
    * @param str - expression to be converted into RPN
    */
-  void Convert(std::string str);
+  void Convert(std::string &str);
 
  private:
   std::list<Lexeme> rpn_list_;  ///< list of separate lexemes converted into RPN

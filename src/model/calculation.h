@@ -4,6 +4,7 @@
 #include <list>
 #include <stack>
 #include <string>
+#include "cmath"
 
 #include "lexeme.h"
 #include "reverse_polish_notation.h"
@@ -15,7 +16,7 @@ class Calculation {
   /**
    * @brief Default constructor
    */
-  Calculation(ReversePolishNotation &rpn) : rpn_(rpn) {}
+  Calculation() = default;
 
   /**
    * @brief Default destructor
@@ -37,10 +38,10 @@ class Calculation {
    * @param expression - input expression to be calculated
    * @param x_value - value of x variable
    */
-  void Parse(std::string expression, double x_value);
+  void Parse(std::string &expression, double x_value);
 
  private:
-  ReversePolishNotation rpn_;     ///< value of x variable
+  ReversePolishNotation rpn_;     ///< class converting input expression into RPN
   std::list<Lexeme> expression_;  ///< expression in RPN to calculate
   double calculation_result_;     ///< result of calculations
 

@@ -1,5 +1,5 @@
-#ifndef VIEW_H
-#define VIEW_H
+#ifndef CPP3_SMARTCALC_V2_0_1_SRC_VIEW_VIEW_H
+#define CPP3_SMARTCALC_V2_0_1_SRC_VIEW_VIEW_H
 
 #include <QMainWindow>
 #include <QStack>
@@ -37,7 +37,10 @@ class View : public QMainWindow {
   void EButtonClicked();
   void BackspaceClicked();
   void EqualButtonClicked();
-  void BuildPlot();
+  void OpenGraphWindow();
+
+private slots:
+  void DialogClosed();
 
  private:
   Ui::View *ui_;
@@ -65,4 +68,4 @@ class View : public QMainWindow {
   void GetAllFlags();
 };
 
-#endif  // VIEW_H
+#endif  // CPP3_SMARTCALC_V2_0_1_SRC_VIEW_VIEW_H

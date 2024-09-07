@@ -2,8 +2,7 @@
 
 using namespace s21;
 
-void Calculation::Parse(std::string expression, double x_value) {
-
+void Calculation::Parse(std::string &expression, double x_value) {
   rpn_.Convert(expression);
 
   expression_ = rpn_.GetRpnList();
@@ -79,6 +78,10 @@ double Calculation::Calculate(s21::Lexeme &current_operator,
       result = acos(a);
     } else if (current_operator.value == "T") {
       result = atan(a);
+    } else if (current_operator.value == "l") {
+      result = log(a);
+    } else if (current_operator.value == "L") {
+      result = log10(a);
     }
   }
   return result;

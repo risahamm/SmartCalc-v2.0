@@ -19,11 +19,16 @@ public:
 
     Graph(QWidget *parent = nullptr);
     ~Graph();
+    QString expression;
+
+
+public slots:
+    void BuildPlot();
 
 
 private:
     Ui::Graph *ui_;
-    static bool instance_;
+
 };
 
 

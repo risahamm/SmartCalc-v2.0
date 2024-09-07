@@ -2,7 +2,7 @@
 
 using namespace s21;
 
-void ReversePolishNotation::Convert(std::string str) {
+void ReversePolishNotation::Convert(std::string &str) {
   std::stack<Lexeme> operators;
 
   size_t move_iter = 1;  ///< value to move the iterator
@@ -46,7 +46,8 @@ size_t ReversePolishNotation::ParseNumber(std::string::iterator it) {
 }
 
 void ReversePolishNotation::ParseOperator(std::stack<Lexeme> &operators_stack,
-                                          std::string::iterator it, std::string &str) {
+                                          std::string::iterator it,
+                                          std::string &str) {
   Lexeme new_element(*it, GetPriority(it), LexemeType::kOperator);
 
   /* if `+` or `-` is an unary sign, push 0 to RPN list */
@@ -72,6 +73,7 @@ void ReversePolishNotation::ParseOperator(std::stack<Lexeme> &operators_stack,
         rpn_list_.push_back(top_lexeme);
         operators_stack.pop();
       }
+      operators_stack.push(new_element);
     }
   }
 }
@@ -112,15 +114,16 @@ Priority ReversePolishNotation::GetPriority(std::string::iterator it) {
   return element_priority;
 }
 
-bool ReversePolishNotation::IsUnary(std::string::iterator it, std::string &str) {
+bool ReversePolishNotation::IsUnary(std::string::iterator it,
+                                    std::string &str) {
   if (*it == '+' || *it == '-') {
     /* if the operator is first in the string */
-    if (*it == *str.begin()) {
+    if (it == str.begin()) {
       return true;
     }
 
     /* if the operator follows '(' */
-    if (*(--it) == '(') {
+    if (*(it - 1) == '(') {
       return true;
     }
   }

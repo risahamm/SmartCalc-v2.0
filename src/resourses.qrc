@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>pics/backspace.svg</file>
+        <file>pics/icons8-график-64.png</file>
     </qresource>
 </RCC>
