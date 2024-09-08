@@ -36,6 +36,7 @@ set(PROJECT_SOURCES
         model/lexeme.h
         model/reverse_polish_notation.h
         model/reverse_polish_notation.cc
+        model/plot_graph.h
         resourses.qrc
 )
 
@@ -70,6 +71,7 @@ set_target_properties(view PROPERTIES
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
+    OUTPUT_NAME "SmartCalc"
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)

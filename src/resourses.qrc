@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>pics/backspace.svg</file>
-        <file>pics/icons8-график-64.png</file>
+        <file>pics/graph_icon.png</file>
+        <file>pics/calculator_icon.png</file>
     </qresource>
 </RCC>

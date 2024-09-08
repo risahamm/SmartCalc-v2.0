@@ -9,7 +9,7 @@ namespace Ui {
 class Graph;
 }
 
-class View;
+// class View;
 
 class Graph : public QDialog {
   Q_OBJECT
@@ -19,9 +19,11 @@ class Graph : public QDialog {
   ~Graph();
 
  public slots:
-  void BuildPlot();
+  void BuildPlot(
+      std::pair<std::vector<double>, std::vector<double>> &coordinates);
   void SetExpression(QString expression);
   void Clear();
+  std::pair<double, double> GetXRange();
 
  private:
   Ui::Graph *ui_;

@@ -4,8 +4,8 @@
 #include <list>
 #include <stack>
 #include <string>
-#include "cmath"
 
+#include "cmath"
 #include "lexeme.h"
 #include "reverse_polish_notation.h"
 
@@ -41,9 +41,9 @@ class Calculation {
   void Parse(std::string &expression, long double x_value);
 
  private:
-  ReversePolishNotation rpn_;     ///< class converting input expression into RPN
-  std::list<Lexeme> expression_;  ///< expression in RPN to calculate
-  long double calculation_result_;     ///< result of calculations
+  ReversePolishNotation rpn_;  ///< class converting input expression into RPN
+  std::list<Lexeme> expression_;    ///< expression in RPN to calculate
+  long double calculation_result_;  ///< result of calculations
 
   /**
    * @brief Performs arithmetic and trigonometric calculations based on the
@@ -53,7 +53,8 @@ class Calculation {
    * @param numbers - stack of double values representing the operands
    * @return result of calculations as a double
    */
-  long double Calculate(s21::Lexeme &current_operator, std::stack<long double> &numbers);
+  long double Calculate(s21::Lexeme &current_operator,
+                        std::stack<long double> &numbers);
 
 };  // class Calculation
 

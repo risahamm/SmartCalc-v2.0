@@ -1,28 +1,25 @@
-#include <iostream>
-#include <map>
-
-#include "calculation.h"
-#include "reverse_polish_notation.h"
-using namespace std;
-
-int main() {
+//#include <iostream>
+//#include <map>
 //
+////#include "calculation.h"
+////#include "reverse_polish_notation.h"
+//#include "../controller/controller.h"
 //
-  s21::Calculation c;
+// using namespace std;
 //
-  std::string str = "1/0";
+// int main() {
 //
-  c.Parse(str, 0);
+//  s21::Calculation c;
+//  std::string str = "1+1";
+////  c.Parse(str, 0);
+////  cout << "end " << c.GetResult() << endl;
 //
+//  s21::Controller a(&c);
 //
+//  std::vector<std::pair<long double, long double>> res =
+//  a.CalculateGraphCoordinates(str, std::pair<long double, long double> {5,
+//  10});
 //
-  cout << "end " << c.GetResult() << endl;
+//  cout << "end " << endl;
 //
-////string str = "6e2";
-////double x = 0;
-////x = std::stod(str);
-////cout << "x = " << x << endl;
-//
-//
-}
-
+//}

@@ -554,6 +554,10 @@ void View::SetResult(long double &result) {
   }
 }
 
+// void TruncateZeroes(long double &value) {
+//     QString
+// }
+
 void View::OpenGraphWindow() {
   if (graph_ == nullptr) {
     graph_ = new Graph(this);
@@ -575,9 +579,17 @@ void View::OpenGraphWindow() {
   if (open_parenthesis_clicked_ == 0 && string_to_calculate_.length() != 0 &&
       operator_clicked_ == false) {
     graph_->SetExpression(string_to_show_);
-    graph_->BuildPlot();
+
+    s21::FormatString formatted_str(string_to_calculate_);
+    std::string str_to_plot = formatted_str.GetString();
+    std::pair<std::vector<double>, std::vector<double>> coordinates =
+        controller_->CalculateGraphCoordinates(str_to_plot,
+                                               graph_->GetXRange());
+
+    graph_->BuildPlot(coordinates);
 
   } else if (string_to_calculate_.length() != 0) {
+    graph_->Clear();
     graph_->SetExpression("invalid input");
 
   } else {

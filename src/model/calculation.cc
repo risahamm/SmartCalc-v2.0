@@ -31,7 +31,7 @@ void Calculation::Parse(std::string &expression, long double x_value) {
 }
 
 long double Calculation::Calculate(s21::Lexeme &current_operator,
-                              std::stack<long double> &numbers) {
+                                   std::stack<long double> &numbers) {
   long double result = 0;
   long double a = numbers.top();
   long double b = 0;

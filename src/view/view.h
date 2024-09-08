@@ -54,7 +54,7 @@ class View : public QMainWindow {
 
  private:
   Ui::View *ui_;
-  Graph *graph_;
+  Graph *graph_ = nullptr;
   s21::Controller *controller_;
   QString string_to_calculate_;
   QString string_to_show_;
