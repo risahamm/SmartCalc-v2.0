@@ -10,7 +10,7 @@ int main() {
 //
   s21::Calculation c;
 //
-  std::string str = "9-3.3+9e*3";
+  std::string str = "1/0";
 //
   c.Parse(str, 0);
 //

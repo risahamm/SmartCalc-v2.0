@@ -1,9 +1,9 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-#include <QDialog>
 #include <qcustomplot.h>
 
+#include <QDialog>
 
 namespace Ui {
 class Graph;
@@ -11,25 +11,20 @@ class Graph;
 
 class View;
 
-class Graph : public QDialog
-{
-    Q_OBJECT
+class Graph : public QDialog {
+  Q_OBJECT
 
-public:
+ public:
+  Graph(QWidget *parent = nullptr);
+  ~Graph();
 
-    Graph(QWidget *parent = nullptr);
-    ~Graph();
-    QString expression;
+ public slots:
+  void BuildPlot();
+  void SetExpression(QString expression);
+  void Clear();
 
-
-public slots:
-    void BuildPlot();
-
-
-private:
-    Ui::Graph *ui_;
-
+ private:
+  Ui::Graph *ui_;
 };
 
-
-#endif // GRAPH_H
+#endif  // GRAPH_H

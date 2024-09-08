@@ -4,9 +4,9 @@
 #include <QMainWindow>
 #include <QStack>
 
+#include "../controller/controller.h"
 #include "format_string.h"
 #include "graph.h"
-#include "../controller/controller.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -39,8 +39,18 @@ class View : public QMainWindow {
   void EqualButtonClicked();
   void OpenGraphWindow();
 
-private slots:
-  void DialogClosed();
+ private slots:
+  void GraphWindowClosed();
+  void ChopString(size_t number_to_chop);
+  bool GetPointStatus(QString::iterator str);
+  bool GetOperatorStatus(QString::iterator str);
+  bool GetZeroStatus(QString::iterator str);
+  bool GetNumStatus(QString::iterator str);
+  bool GetXStatus(QString::iterator str);
+  bool GetEStatus(QString::iterator str);
+  void SetResult(long double &result);
+
+  void GetAllFlags();
 
  private:
   Ui::View *ui_;
@@ -55,17 +65,6 @@ private slots:
   bool e_clicked_ = false;
   bool flag_first_zero_ = false;
   int open_parenthesis_clicked_ = 0;
-
-  void ChopString(size_t number_to_chop);
-  bool GetPointStatus(QString::iterator str);
-  bool GetOperatorStatus(QString::iterator str);
-  bool GetZeroStatus(QString::iterator str);
-  bool GetNumStatus(QString::iterator str);
-  bool GetXStatus(QString::iterator str);
-  bool GetEStatus(QString::iterator str);
-  void SetResult(double &result);
-
-  void GetAllFlags();
 };
 
 #endif  // CPP3_SMARTCALC_V2_0_1_SRC_VIEW_VIEW_H

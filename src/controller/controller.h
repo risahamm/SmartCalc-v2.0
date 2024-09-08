@@ -11,12 +11,12 @@ class Controller {
   Controller(Calculation *calculation) : model_(calculation){};
   ~Controller() = default;
 
-  double Calculate(std::string expression, double x_value) {
+  long double Calculate(std::string expression, double x_value) {
     model_->Parse(expression, x_value);
     return model_->GetResult();
   }
 
-//  std::vector<std::pair<double, double>> CalculateCoordinates(std::string &expression, std::pair<double, double> x_range) {
+//  std::vector<std::pair<long double, long double>> CalculateCoordinates(std::string &expression, std::pair<long double, long double> x_range) {
 //    return plot_.CalculateY(expression, x_range);
 //  }
 

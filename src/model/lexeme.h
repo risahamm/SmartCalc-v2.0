@@ -87,14 +87,9 @@ class Lexeme {
    * @param other - other lexeme to assign from
    * @return reference to this lexeme after assignment
    */
-  Lexeme &operator=(const Lexeme &other) {
-    value = other.value;
-    priority = other.priority;
-    type = other.type;
-    return *this;
-  }
+  Lexeme &operator=(const Lexeme &other) = default;
 };  // class Lexeme
 
 }  // namespace s21
 
-#endif // CPP3_SMARTCALC_V2_0_1_SRC_MODEL_LEXEME_H
+#endif  // CPP3_SMARTCALC_V2_0_1_SRC_MODEL_LEXEME_H

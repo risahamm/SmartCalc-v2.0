@@ -2,14 +2,14 @@
 
 using namespace s21;
 
-void Calculation::Parse(std::string &expression, double x_value) {
+void Calculation::Parse(std::string &expression, long double x_value) {
   rpn_.Convert(expression);
 
   expression_ = rpn_.GetRpnList();
-  double operation_result = 0;
-  std::stack<double> numbers;
+  long double operation_result = 0;
+  std::stack<long double> numbers;
   Lexeme lexeme;
-  double number;
+  long double number;
   while (!expression_.empty()) {
     lexeme = expression_.front();
     expression_.pop_front();
@@ -30,11 +30,11 @@ void Calculation::Parse(std::string &expression, double x_value) {
   numbers.pop();
 }
 
-double Calculation::Calculate(s21::Lexeme &current_operator,
-                              std::stack<double> &numbers) {
-  double result = 0;
-  double a = numbers.top();
-  double b = 0;
+long double Calculation::Calculate(s21::Lexeme &current_operator,
+                              std::stack<long double> &numbers) {
+  long double result = 0;
+  long double a = numbers.top();
+  long double b = 0;
   numbers.pop();
 
   /* operations that require two operands */
@@ -87,4 +87,4 @@ double Calculation::Calculate(s21::Lexeme &current_operator,
   return result;
 }
 
-double Calculation::GetResult() { return calculation_result_; }
+long double Calculation::GetResult() { return calculation_result_; }

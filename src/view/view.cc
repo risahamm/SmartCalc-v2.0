@@ -295,7 +295,8 @@ void View::ModButtonClicked() {
 
 void View::PowButtonClicked() {
   if (string_to_calculate_.length() != 0 &&
-      string_to_calculate_.back() != '.' && string_to_calculate_.back() != 'e' &&
+      string_to_calculate_.back() != '.' &&
+      string_to_calculate_.back() != 'e' &&
       (num_clicked_ == true || string_to_calculate_.back() == ')' ||
        string_to_calculate_.back() == 'x')) {
     string_to_calculate_ += "^(";
@@ -428,11 +429,16 @@ void View::BackspaceClicked() {
       ChopString(1);
     }
 
-    QString::iterator str = string_to_calculate_.end() - 1;
-    num_clicked_ = GetNumStatus(str);
-    operator_clicked_ = GetOperatorStatus(str);
-    x_clicked_ = GetXStatus(str);
-    ui_->display->setText(string_to_show_);
+    if (string_to_calculate_.length() == 0) {
+      ClearButtonClicked();
+
+    } else {
+      ui_->display->setText(string_to_show_);
+      QString::iterator str = string_to_calculate_.end() - 1;
+      num_clicked_ = GetNumStatus(str);
+      operator_clicked_ = GetOperatorStatus(str);
+      x_clicked_ = GetXStatus(str);
+    }
 
   } else { /* string is empty */
 
@@ -505,15 +511,16 @@ void View::EqualButtonClicked() {
   if (open_parenthesis_clicked_ == 0 && string_to_calculate_.length() != 0 &&
       operator_clicked_ == false) {
     s21::FormatString formatted_str(string_to_calculate_);
-    double x_value = ui_->x_value_input->text().toDouble();
+    long double x_value = ui_->x_value_input->text().toDouble();
     std::cout << "formatted_str: " << formatted_str.GetString() << std::endl;
-    double result = controller_->Calculate(formatted_str.GetString(), x_value);
+    long double result =
+        controller_->Calculate(formatted_str.GetString(), x_value);
 
     SetResult(result);
   }
 }
 
-void View::SetResult(double &result) {
+void View::SetResult(long double &result) {
   /* clear all flags */
   ClearButtonClicked();
 
@@ -521,7 +528,7 @@ void View::SetResult(double &result) {
     ui_->display->setText("calculation error");
 
   } else {
-    double truncated_result = std::trunc(result);
+    long double truncated_result = std::trunc(result);
 
     if (truncated_result == result) {
       string_to_calculate_ = QString::number(result, 'f', 0);
@@ -532,8 +539,8 @@ void View::SetResult(double &result) {
     }
 
     if (string_to_calculate_.length() >= 21) {
-        string_to_calculate_ = QString::number(result, 'e', 0);
-        e_clicked_ = true;
+      string_to_calculate_ = QString::number(result, 'e', 0);
+      e_clicked_ = true;
     }
 
     string_to_show_ = string_to_calculate_;
@@ -548,34 +555,37 @@ void View::SetResult(double &result) {
 }
 
 void View::OpenGraphWindow() {
-
-    if (!graph_) {
-
+  if (graph_ == nullptr) {
     graph_ = new Graph(this);
 
     int main_window_x = this->x();
     int main_window_y = this->y();
 
-    connect(graph_, &Graph::finished, this, &View::DialogClosed);
-
-    graph_->expression = string_to_show_;
-    graph_->BuildPlot();
+    connect(graph_, &Graph::finished, this, &View::GraphWindowClosed);
 
     graph_->move(main_window_x + this->width() + 20, main_window_y);
     graph_->show();
 
-    } else {
-        graph_->expression = string_to_show_;
-        graph_->BuildPlot();
-        graph_->raise();
-        graph_->activateWindow();
-    }
+  } else {
+    graph_->raise();
+    graph_->activateWindow();
+  }
 
+  /* if expression is valid */
+  if (open_parenthesis_clicked_ == 0 && string_to_calculate_.length() != 0 &&
+      operator_clicked_ == false) {
+    graph_->SetExpression(string_to_show_);
+    graph_->BuildPlot();
+
+  } else if (string_to_calculate_.length() != 0) {
+    graph_->SetExpression("invalid input");
+
+  } else {
+    graph_->Clear();
+  }
 }
 
-void View::DialogClosed() {
-    graph_ = nullptr;
-}
+void View::GraphWindowClosed() { graph_ = nullptr; }
 
 void View::GetAllFlags() {
   std::cout << "-----------------------------" << std::endl;
