@@ -554,7 +554,7 @@ void View::SetResult(long double &result) {
   }
 }
 
-QString View::TruncateZeroes(long double &value) {
+QString View::TruncateZeros(long double &value) {
   QString str_value = QString::number(value, 'f', 7);
   QString::iterator it = (str_value.end() - 1);
 

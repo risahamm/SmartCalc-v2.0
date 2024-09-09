@@ -49,7 +49,7 @@ class View : public QMainWindow {
   bool GetXStatus(QString::iterator str);
   bool GetEStatus(QString::iterator str);
   void SetResult(long double &result);
-  QString TruncateZeroes(long double &value);
+  QString TruncateZeros(long double &value);
 
   void GetAllFlags();
 
