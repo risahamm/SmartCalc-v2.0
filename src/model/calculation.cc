@@ -9,7 +9,7 @@ void Calculation::Parse(std::string &expression, long double x_value) {
   long double operation_result = 0;
   std::stack<long double> numbers;
   Lexeme lexeme;
-  long double number;
+  long double number = 0;
   while (!expression_.empty()) {
     lexeme = expression_.front();
     expression_.pop_front();
@@ -67,21 +67,21 @@ long double Calculation::Calculate(s21::Lexeme &current_operator,
       numbers.pop();
       result = pow(b, a);
     } else if (current_operator.value == "s") {
-      result = sin(a);
+      result = sinl(a);
     } else if (current_operator.value == "c") {
-      result = cos(a);
+      result = cosl(a);
     } else if (current_operator.value == "t") {
-      result = tan(a);
+      result = tanl(a);
     } else if (current_operator.value == "S") {
-      result = asin(a);
+      result = asinl(a);
     } else if (current_operator.value == "C") {
-      result = acos(a);
+      result = acosl(a);
     } else if (current_operator.value == "T") {
-      result = atan(a);
+      result = atanl(a);
     } else if (current_operator.value == "l") {
-      result = log(a);
+      result = logl(a);
     } else if (current_operator.value == "L") {
-      result = log10(a);
+      result = log10l(a);
     }
   }
   return result;

@@ -78,9 +78,6 @@ void View::ClearButtonClicked() {
   open_parenthesis_clicked_ = 0;
   flag_first_zero_ = false;
   e_clicked_ = false;
-  //  ui_->plot->clearGraphs();
-  //  ui_->plot->replot();
-  //  ui_->dispaly->clear();
   GetAllFlags();
 }
 
@@ -528,16 +525,19 @@ void View::SetResult(long double &result) {
     ui_->display->setText("calculation error");
 
   } else {
-    long double truncated_result = std::trunc(result);
+    long double truncated_result = truncl(result);
 
-    if (truncated_result == result) {
-      string_to_calculate_ = QString::number(result, 'f', 0);
-
-    } else {
-      string_to_calculate_ = QString::number(result, 'f', 7);
+    /* if result is float */
+    if (fabs(result - truncated_result) > 1e-7) {
+      string_to_calculate_ = TruncateZeroes(result);
       point_clicked_ = true;
+
+      /* if result is integer */
+    } else {
+      string_to_calculate_ = QString::number(result, 'L', 0);
     }
 
+    /* if result is too long for display window, use scientific notation */
     if (string_to_calculate_.length() >= 21) {
       string_to_calculate_ = QString::number(result, 'e', 0);
       e_clicked_ = true;
@@ -554,11 +554,20 @@ void View::SetResult(long double &result) {
   }
 }
 
-// void TruncateZeroes(long double &value) {
-//     QString
-// }
+QString View::TruncateZeroes(long double &value) {
+  QString str_value = QString::number(value, 'f', 7);
+  QString::iterator it = (str_value.end() - 1);
+
+  while (*it == '0') {
+    it--;
+    str_value.chop(1);
+  }
+
+  return str_value;
+}
 
 void View::OpenGraphWindow() {
+  /* if the window isn't open */
   if (graph_ == nullptr) {
     graph_ = new Graph(this);
 
@@ -570,6 +579,7 @@ void View::OpenGraphWindow() {
     graph_->move(main_window_x + this->width() + 20, main_window_y);
     graph_->show();
 
+    /* if the window is already open */
   } else {
     graph_->raise();
     graph_->activateWindow();
@@ -592,6 +602,7 @@ void View::OpenGraphWindow() {
     graph_->Clear();
     graph_->SetExpression("invalid input");
 
+    /* input string is empty */
   } else {
     graph_->Clear();
   }
