@@ -18,24 +18,24 @@ namespace s21 {
 class ReversePolishNotation {
  public:
   /**
-   * @brief Default constructor
+   * @brief Default constructor.
    */
   ReversePolishNotation() = default;
   /**
-   * @brief Default destructor
+   * @brief Default destructor.
    */
   ~ReversePolishNotation() = default;
 
   /**
-   * @brief Gets a list of lexemes in RPN
+   * @brief Gets a list of lexemes in RPN.
    * @return std::list<Lexeme> list of lexemes representing the expression in
-   * RPN
+   * RPN.
    */
   std::list<Lexeme> GetRpnList() { return rpn_list_; };
 
   /**
-   * @brief Converts a string into a list of separate lexemes converted into RPN
-   * @param str - expression to be converted into RPN
+   * @brief Converts a string into a list of separate lexemes converted into RPN.
+   * @param str expression to be converted into RPN.
    */
   void Convert(std::string &str);
 
@@ -43,45 +43,45 @@ class ReversePolishNotation {
   std::list<Lexeme> rpn_list_;  ///< list of separate lexemes converted into RPN
 
   /**
-   * @brief Parses a number as a single lexeme and pushes it to the RPN List
-   * @param it - pointer to the first digit of a number
-   * @return value to move the iterator in the string after parsing a lexeme
+   * @brief Parses a number as a single lexeme and pushes it to the RPN List.
+   * @param it pointer to the first digit of a number.
+   * @return value to move the iterator in the string after parsing a lexeme.
    */
   size_t ParseNumber(std::string::iterator it);
 
   /**
-   * @brief Parses an operator and pushes it to the stack
-   * @param operators_stack - stack of operators
-   * @param it - pointer to an element in the string
-   * @param str - input string
+   * @brief Parses an operator and pushes it to the stack.
+   * @param operators_stack stack of operators.
+   * @param it pointer to an element in the string.
+   * @param str input string.
    */
   void ParseOperator(std::stack<Lexeme> &operators_stack,
                      std::string::iterator it, std::string &str);
 
   /**
-   * @brief Pops and adds to RPN list everything until '(' is met
-   * @param operators_stack - stack of operators
+   * @brief Pops and adds to RPN list everything until '(' is met.
+   * @param operators_stack stack of operators.
    */
   void CloseParenth(std::stack<Lexeme> &operators_stack);
 
   /**
-   * @brief Pushes opening parenthesis to the stack
-   * @param operators_stack
+   * @brief Pushes opening parenthesis to the stack.
+   * @param operators_stack stack of operators.
    */
   void PushOpenParenth(std::stack<Lexeme> &operators_stack);
 
   /**
-   * @brief Checks the priority of the element
-   * @param it - iterator to the element
-   * @return Priority of the element
+   * @brief Checks the priority of the element.
+   * @param it iterator to the element.
+   * @return priority of the element.
    */
   Priority GetPriority(std::string::iterator it);
 
   /**
-   * @brief Checks if `-` or `+` is unary
-   * @param it - iterator to the element
-   * @param str - input string
-   * @return true if unary, otherwise false
+   * @brief Checks if `-` or `+` is unary.
+   * @param it iterator to the element.
+   * @param str input string.
+   * @return true if unary, otherwise false.
    */
   bool IsUnary(std::string::iterator it, std::string &str);
 

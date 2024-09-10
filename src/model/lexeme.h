@@ -55,16 +55,16 @@ class Lexeme {
   LexemeType type;    ///< type of the lexeme
 
   /**
-   * @brief Default constructor
+   * @brief Default constructor.
    */
   Lexeme()
       : value(""), priority(Priority::kPriority_0), type(LexemeType::kNumber){};
 
   /**
-   * @brief Parameterized constructor
-   * @param new_value - character value of the lexeme
-   * @param elem_priority - priority of the lexeme
-   * @param elem_type - type of the lexeme
+   * @brief Parameterized constructor.
+   * @param new_value character value of the lexeme.
+   * @param elem_priority priority of the lexeme.
+   * @param elem_type type of the lexeme.
    */
   Lexeme(char new_value, Priority elem_priority, LexemeType elem_type)
       : priority(elem_priority), type(elem_type) {
@@ -72,8 +72,8 @@ class Lexeme {
   };
 
   /**
-   * @brief Copy constructor
-   * @param other - other lexeme to copy from
+   * @brief Copy constructor.
+   * @param other other lexeme to copy from.
    */
   Lexeme(const Lexeme &other) { *this = other; }
 
@@ -83,9 +83,9 @@ class Lexeme {
   ~Lexeme() = default;
 
   /**
-   * @brief Assignment operator
-   * @param other - other lexeme to assign from
-   * @return reference to this lexeme after assignment
+   * @brief Assignment operator.
+   * @param other other lexeme to assign from.
+   * @return reference to this lexeme after assignment.
    */
   Lexeme &operator=(const Lexeme &other) = default;
 };  // class Lexeme

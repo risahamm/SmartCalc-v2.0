@@ -17,21 +17,21 @@ namespace s21 {
 class FormatString {
  public:
   /**
-   * @brief Parametrized constructor
-   * @param input_str - QString to be converted
+   * @brief Parametrized constructor.
+   * @param input_str QString to be converted.
    */
   FormatString(QString const input_str) : q_str_(input_str), basic_str_("") {
     Convert();
   }
 
   /**
-   * @brief Default destructor
+   * @brief Default destructor.
    */
   ~FormatString() = default;
 
   /**
-   * @brief Accessor
-   * @return std::string expression suitable for calculation
+   * @brief Accessor.
+   * @return std::string expression suitable for calculation.
    */
   std::string GetString() { return basic_str_; }
 
@@ -40,7 +40,7 @@ class FormatString {
   QString q_str_;          ///< input string to be converted
 
   /**
-   * @brief Converts QString into std::string suitable for calculation
+   * @brief Converts QString into std::string suitable for calculation.
    */
   void Convert();
 

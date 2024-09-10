@@ -11,21 +11,29 @@
 
 namespace s21 {
 
+/**
+ * @brief Class that performs arithmetic and trigonometric calculations
+ * based on mathematical expressions.
+ * @details This class provides functionality to parse mathematical expressions,
+ * convert them into Reverse Polish Notation (RPN), and compute the result.
+ * It supports variable substitution for expressions containing a variable 'x'.
+ * The result of the calculation can be retrieved using the GetResult method.
+ */
 class Calculation {
  public:
   /**
-   * @brief Default constructor
+   * @brief Default constructor.
    */
   Calculation() = default;
 
   /**
-   * @brief Default destructor
+   * @brief Default destructor.
    */
   ~Calculation() = default;
 
   /**
-   * @brief Retrieves the result of calculation
-   * @return double value representing the result of the calculation
+   * @brief Retrieves the result of calculation.
+   * @return long double value representing the result of the calculation.
    */
   long double GetResult();
 
@@ -34,9 +42,9 @@ class Calculation {
    * performing calculations when operators are encountered.
    * @details Results of operations are also pushed into stack. At the end of
    * the parsing, the final result of the expression is stored in
-   * calculation_result_
-   * @param expression - input expression to be calculated
-   * @param x_value - value of x variable
+   * calculation_result_.
+   * @param expression input expression to be calculated.
+   * @param x_value value of x variable.
    */
   void Parse(std::string &expression, long double x_value);
 
@@ -47,11 +55,11 @@ class Calculation {
 
   /**
    * @brief Performs arithmetic and trigonometric calculations based on the
-   * given operator and operands
-   * @param current_operator - reference to the lexeme that contains the
-   * operator to be applied
-   * @param numbers - stack of double values representing the operands
-   * @return result of calculations as a double
+   * given operator and operands.
+   * @param current_operator reference to the lexeme that contains the
+   * operator to be applied.
+   * @param numbers stack of double values representing the operands.
+   * @return result of calculations as long double.
    */
   long double Calculate(s21::Lexeme &current_operator,
                         std::stack<long double> &numbers);

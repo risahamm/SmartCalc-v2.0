@@ -42,12 +42,12 @@ class View : public QMainWindow {
  private slots:
   void GraphWindowClosed();
   void ChopString(size_t number_to_chop);
-  bool GetPointStatus(QString::iterator str);
-  bool GetOperatorStatus(QString::iterator str);
-  bool GetZeroStatus(QString::iterator str);
-  bool GetNumStatus(QString::iterator str);
-  bool GetXStatus(QString::iterator str);
-  bool GetEStatus(QString::iterator str);
+  bool GetPointStatus(QString::ConstIterator str);
+  bool GetOperatorStatus(QString::ConstIterator str);
+  bool GetZeroStatus(QString::ConstIterator str);
+  bool GetNumStatus(QString::ConstIterator str);
+  bool GetXStatus(QString::ConstIterator str);
+  bool GetEStatus(QString::ConstIterator str);
   void SetResult(long double &result);
   QString TruncateZeros(long double &value);
 
