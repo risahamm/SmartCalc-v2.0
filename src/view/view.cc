@@ -375,6 +375,8 @@ void View::BackspaceClicked() {
     if (string_to_calculate_.back() == '.') {
       ChopString(1);
       point_clicked_ = false;
+      QString::iterator str = string_to_calculate_.end() - 1;
+      flag_first_zero_ = GetZeroStatus(str);
 
     } else if (string_to_calculate_.back() == '%' ||
                string_to_calculate_.back() == '+' ||
@@ -467,8 +469,20 @@ bool View::GetOperatorStatus(QString::iterator str) {
 }
 
 bool View::GetZeroStatus(QString::iterator str) {
+  /* if removed symbol isn't point */
   if (!str->isNull() && *str == '0') {
     return false;
+
+    /* if removed symbol is point */
+  } else if (!str->isNull() && *str == '.') {
+    if (*(--str) == '0') {
+      if (!(str - 1)->isNull() && (*(str - 1) == '+' || *(str - 1) == '-' ||
+                                   *(str - 1) == '*' || *(str - 1) == '/')) {
+        return false;
+      } else if ((str - 1)->isNull()) {
+        return false;
+      }
+    }
   }
 
   return true;
@@ -529,7 +543,7 @@ void View::SetResult(long double &result) {
 
     /* if result is float */
     if (fabs(result - truncated_result) > 1e-7) {
-      string_to_calculate_ = TruncateZeroes(result);
+      string_to_calculate_ = TruncateZeros(result);
       point_clicked_ = true;
 
       /* if result is integer */
