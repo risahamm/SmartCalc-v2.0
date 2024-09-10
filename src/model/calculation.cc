@@ -17,7 +17,12 @@ void Calculation::Parse(std::string &expression, long double x_value) {
       if (lexeme.value == "x") {
         numbers.push(x_value);
       } else {
-        number = std::stod(lexeme.value);
+        try {
+          number = std::stold(lexeme.value);
+        } catch (const std::out_of_range &e) {
+          calculation_result_ = NAN;
+          return;
+        }
         numbers.push(number);
       }
     }

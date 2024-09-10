@@ -479,6 +479,7 @@ bool View::GetZeroStatus(QString::iterator str) {
       if (!(str - 1)->isNull() && (*(str - 1) == '+' || *(str - 1) == '-' ||
                                    *(str - 1) == '*' || *(str - 1) == '/')) {
         return false;
+
       } else if ((str - 1)->isNull()) {
         return false;
       }
