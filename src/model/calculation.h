@@ -4,6 +4,7 @@
 #include <list>
 #include <stack>
 #include <string>
+#include <stdexcept>
 
 #include "cmath"
 #include "lexeme.h"

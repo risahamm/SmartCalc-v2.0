@@ -340,6 +340,15 @@ TEST(calculate, sci_notation_2) {
   EXPECT_NEAR(result, 45.1923076, LIMIT);
 }
 
+TEST(calculate, sci_notation_3) {
+  s21::Calculation calc;
+  std::string str = "2e-55555";
+  long double x = 0;
+  calc.Parse(str, x);
+  long double result = calc.GetResult();
+  EXPECT_TRUE(std::isnan(result));
+}
+
 /* MIXED OPERATIONS */
 
 TEST(calculate, mixed_1) {
