@@ -24,7 +24,7 @@ gcov_report: test
 	@open ./gcov_report/index.html
 
 dvi:
-
+	@open ./dvi_report/html/index.html
 
 dist:
 
@@ -35,7 +35,6 @@ check_style:
 	clang-format -style=Google -n view/*.cc view/*.h
 	clang-format -style=Google -n controller/*.h
 	clang-format -style=Google -n model/*.cc model/*.h
-	clang-format -style=Google -n view/*.cc view/*.h
 	clang-format -style=Google -n model/tests/*.cc
 	clang-format -style=Google -n main.cc
 
@@ -43,6 +42,5 @@ fix_style:
 	clang-format -style=Google -i view/*.cc view/*.h
 	clang-format -style=Google -i controller/*.h
 	clang-format -style=Google -i model/*.cc model/*.h
-	clang-format -style=Google -i view/*.cc view/*.h
 	clang-format -style=Google -i model/tests/*.cc
 	clang-format -style=Google -i main.cc

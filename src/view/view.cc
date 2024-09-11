@@ -375,7 +375,7 @@ void View::BackspaceClicked() {
     if (string_to_calculate_.back() == '.') {
       ChopString(1);
       point_clicked_ = false;
-      QString::iterator str = string_to_calculate_.end() - 1;
+      QString::ConstIterator str = string_to_calculate_.end() - 1;
       flag_first_zero_ = GetZeroStatus(str);
 
     } else if (string_to_calculate_.back() == '%' ||
@@ -384,7 +384,7 @@ void View::BackspaceClicked() {
                string_to_calculate_.back() == '*' ||
                string_to_calculate_.back() == '/') {
       ChopString(1);
-      QString::iterator str = string_to_calculate_.end() - 1;
+      QString::ConstIterator str = string_to_calculate_.end() - 1;
       point_clicked_ = GetPointStatus(str);
       flag_first_zero_ = GetZeroStatus(str);
       e_clicked_ = GetEStatus(str);
@@ -433,7 +433,7 @@ void View::BackspaceClicked() {
 
     } else {
       ui_->display->setText(string_to_show_);
-      QString::iterator str = string_to_calculate_.end() - 1;
+      QString::ConstIterator str = string_to_calculate_.end() - 1;
       num_clicked_ = GetNumStatus(str);
       operator_clicked_ = GetOperatorStatus(str);
       x_clicked_ = GetXStatus(str);
@@ -446,7 +446,7 @@ void View::BackspaceClicked() {
   GetAllFlags();
 }
 
-bool View::GetPointStatus(QString::iterator str) {
+bool View::GetPointStatus(QString::ConstIterator str) {
   while (!str->isNull() && *str != '+' && *str != '-' && *str != '*' &&
          *str != '/' && *str != '(' && *str != ')') {
     if (*str == '.') {
@@ -459,7 +459,7 @@ bool View::GetPointStatus(QString::iterator str) {
   return false;
 }
 
-bool View::GetOperatorStatus(QString::iterator str) {
+bool View::GetOperatorStatus(QString::ConstIterator str) {
   if (!str->isNull() &&
       (*str == '+' || *str == '-' || *str == '*' || *str == '/')) {
     return true;
@@ -468,7 +468,7 @@ bool View::GetOperatorStatus(QString::iterator str) {
   return false;
 }
 
-bool View::GetZeroStatus(QString::iterator str) {
+bool View::GetZeroStatus(QString::ConstIterator str) {
   /* if removed symbol isn't point */
   if (!str->isNull() && *str == '0') {
     return false;
@@ -489,7 +489,7 @@ bool View::GetZeroStatus(QString::iterator str) {
   return true;
 }
 
-bool View::GetNumStatus(QString::iterator str) {
+bool View::GetNumStatus(QString::ConstIterator str) {
   if (!str->isNull() && str->isDigit() || *str == '.') {
     return true;
   }
@@ -497,7 +497,7 @@ bool View::GetNumStatus(QString::iterator str) {
   return false;
 }
 
-bool View::GetXStatus(QString::iterator str) {
+bool View::GetXStatus(QString::ConstIterator str) {
   if (!str->isNull() && *str == 'x') {
     return true;
   }
@@ -505,7 +505,7 @@ bool View::GetXStatus(QString::iterator str) {
   return false;
 }
 
-bool View::GetEStatus(QString::iterator str) {
+bool View::GetEStatus(QString::ConstIterator str) {
   if (!str->isNull() && *str == 'e') {
     return true;
   }

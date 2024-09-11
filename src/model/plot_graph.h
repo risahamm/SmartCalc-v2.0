@@ -8,12 +8,33 @@
 
 namespace s21 {
 
+/**
+ * @brief Class for calculating and storing coordinates for graphing.
+ * @details This class takes a mathematical expression and a range of x-values,
+ * computes the corresponding y-values using the provided expression,
+ * and stores the resulting coordinates in vectors for further use,
+ * which is plotting a graph.
+ */
 class PlotGraph {
  public:
+  /**
+   * @brief Default constructor.
+   */
   PlotGraph() = default;
 
+  /**
+   * @brief Default destructor.
+   */
   ~PlotGraph() = default;
 
+  /**
+   * @brief Calculates the x and y coordinates for the given expression over the
+   * specified range.
+   * @param expression string representing mathematical expression.
+   * @param x_range pair of doubles representing the range of x-values.
+   * @return pair of vectors containing the x-coordinates and corresponding
+   * y-coordinates.
+   */
   std::pair<std::vector<double>, std::vector<double>> Calculate(
       std::string &expression, std::pair<double, double> x_range) {
     std::vector<double> x_vector;
@@ -39,10 +60,12 @@ class PlotGraph {
   }
 
  private:
-  long double x_min_;
-  long double x_max_;
-  std::pair<std::vector<double>, std::vector<double>> coordinates_;
-  Calculation calc_expression_;
+  long double x_min_;  ///< min x-value
+  long double x_max_;  ///< max x-value
+  std::pair<std::vector<double>, std::vector<double>>
+      coordinates_;  ///< coordinates for plotting
+  Calculation
+      calc_expression_;  ///< instance of Calculation to evaluate expressions.
 
 };  // class PlotGraph
 

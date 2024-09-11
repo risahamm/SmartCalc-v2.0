@@ -3,8 +3,8 @@
 
 #include <list>
 #include <stack>
-#include <string>
 #include <stdexcept>
+#include <string>
 
 #include "cmath"
 #include "lexeme.h"

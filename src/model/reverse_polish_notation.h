@@ -11,9 +11,15 @@ namespace s21 {
 
 /**
  * @brief Class for converting an expression into Reversed Polish Notation
- * (RPN).
- * @details This class takes a string expression, splits it into lexemes and
+ * (RPN). This class takes a string expression, splits it into lexemes and
  * converts them into RPN. The result is stored in std::list container.
+ * @details This class implements Dijkstra's algorithm or so called
+ * "shunting-yard algorithm". The algorithm is is stack-based. There are two
+ * text variables involved in the conversion: the input and the output list. The
+ * conversion process uses the stack to store operations not yet added to the
+ * output list. The conversion program sequentially reads each token from the
+ * input string and on each step does certain actions based on which tokens have
+ * been read.
  */
 class ReversePolishNotation {
  public:
@@ -34,7 +40,8 @@ class ReversePolishNotation {
   std::list<Lexeme> GetRpnList() { return rpn_list_; };
 
   /**
-   * @brief Converts a string into a list of separate lexemes converted into RPN.
+   * @brief Converts a string into a list of separate lexemes converted into
+   * RPN.
    * @param str expression to be converted into RPN.
    */
   void Convert(std::string &str);

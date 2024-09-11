@@ -14,6 +14,13 @@ class View;
 }
 QT_END_NAMESPACE
 
+/**
+ * @brief Class representing the main user interface of the calculator
+ * application.
+ * @details This class provides the graphical user interface for the calculator.
+ * It handles user interactions, displays results, and manages the graphing
+ * window for plotting mathematical functions.
+ */
 class View : public QMainWindow {
   Q_OBJECT
 
