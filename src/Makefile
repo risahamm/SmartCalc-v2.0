@@ -24,7 +24,7 @@ gcov_report: test
 	@open ./../gcov_report/index.html
 
 dvi:
-	@open ./dvi_report/html/index.html
+	@open ./../dvi_report/html/index.html
 
 dist:
 

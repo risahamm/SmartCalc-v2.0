@@ -33,7 +33,7 @@ class ReversePolishNotation {
   ~ReversePolishNotation() = default;
 
   /**
-   * @brief Gets a list of lexemes in RPN.
+   * @brief Retrieves a list of lexemes in RPN.
    * @return std::list<Lexeme> list of lexemes representing the expression in
    * RPN.
    */

@@ -84,15 +84,15 @@ void View::ClearButtonClicked() {
 void View::NumberClicked() {
   QPushButton *button = qobject_cast<QPushButton *>(sender());
 
-  if (string_to_calculate_.length() != 0 && point_clicked_ == false &&
+  if (string_to_calculate_.length() != 0 && !point_clicked_ &&
       string_to_calculate_.back() == '0' && button->text() == '0' &&
-      flag_first_zero_ == false) {
+      !flag_first_zero_) {
     flag_first_zero_ = false;
   }
 
-  if (string_to_calculate_.length() != 0 && point_clicked_ == false &&
+  if (string_to_calculate_.length() != 0 && !point_clicked_ &&
       button->text() != '0') {
-    if (string_to_calculate_.back() == '0' && flag_first_zero_ == false) {
+    if (string_to_calculate_.back() == '0' && !flag_first_zero_) {
       string_to_calculate_.chop(1);
       string_to_show_.chop(1);
     }
@@ -100,8 +100,7 @@ void View::NumberClicked() {
     flag_first_zero_ = true;
   }
 
-  if ((flag_first_zero_ == true ||
-       (num_clicked_ == false || point_clicked_ == true)) &&
+  if ((flag_first_zero_ || (!num_clicked_ || point_clicked_)) &&
       button->text() != '0') {
     if (string_to_calculate_.length() == 0) {
       string_to_calculate_ += button->text();
@@ -122,8 +121,7 @@ void View::NumberClicked() {
       flag_first_zero_ = true;
     }
 
-  } else if ((flag_first_zero_ == true ||
-              (num_clicked_ == false || point_clicked_ == true)) &&
+  } else if ((flag_first_zero_ || (!num_clicked_ || point_clicked_)) &&
              button->text() == '0') {
     if (string_to_calculate_.length() == 0) {
       string_to_calculate_ += button->text();
@@ -146,7 +144,7 @@ void View::NumberClicked() {
 }
 
 void View::PlusMinusOperatorClicked() {
-  if (string_to_calculate_.length() != 0 && operator_clicked_ == false &&
+  if (string_to_calculate_.length() != 0 && !operator_clicked_ &&
       string_to_calculate_.back() != '.') {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
 
@@ -174,7 +172,7 @@ void View::PlusMinusOperatorClicked() {
 }
 
 void View::MulDivOperatorClicked() {
-  if (operator_clicked_ == false && string_to_calculate_.length() != 0 &&
+  if (!operator_clicked_ && string_to_calculate_.length() != 0 &&
       string_to_calculate_.back() != '(' &&
       string_to_calculate_.back() != '.') {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
@@ -199,7 +197,7 @@ void View::MulDivOperatorClicked() {
 void View::MathFunctionClicked() {
   bool flag = false;
   if (string_to_calculate_.length() != 0) {
-    if (num_clicked_ == false && point_clicked_ == false &&
+    if (!num_clicked_ && !point_clicked_ &&
         string_to_calculate_.back() != 'x' &&
         string_to_calculate_.back() != ')') {
       flag = true;
@@ -213,7 +211,7 @@ void View::MathFunctionClicked() {
       e_clicked_ = false;
     }
 
-  } else if ((operator_clicked_ == true || string_to_calculate_.length() == 0 ||
+  } else if ((operator_clicked_ || string_to_calculate_.length() == 0 ||
               open_parenthesis_clicked_ > 0) &&
              !flag) {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
@@ -236,8 +234,8 @@ void View::OpenParenthesisButtonClicked() {
     open_parenthesis_clicked_++;
 
   } else if (string_to_calculate_.length() != 0 &&
-             (operator_clicked_ == true || open_parenthesis_clicked_ > 0) &&
-             string_to_calculate_.back() != 'x' && num_clicked_ == false) {
+             (operator_clicked_ || open_parenthesis_clicked_ > 0) &&
+             string_to_calculate_.back() != 'x' && !num_clicked_) {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
     string_to_calculate_ += button->text();
     string_to_show_ += button->text();
@@ -251,8 +249,7 @@ void View::OpenParenthesisButtonClicked() {
 
 void View::CloseParenthesisButtonClicked() {
   if (open_parenthesis_clicked_ > 0 && string_to_calculate_.back() != '.' &&
-      (num_clicked_ == true || string_to_calculate_.back() == ')' ||
-       x_clicked_ == true)) {
+      (num_clicked_ || string_to_calculate_.back() == ')' || x_clicked_)) {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
     string_to_calculate_ += button->text();
     string_to_show_ += button->text();
@@ -264,8 +261,8 @@ void View::CloseParenthesisButtonClicked() {
 }
 
 void View::PointButtonClicked() {
-  if (num_clicked_ == true && point_clicked_ == false &&
-      string_to_calculate_.back() != ')' && e_clicked_ == false) {
+  if (num_clicked_ && !point_clicked_ && string_to_calculate_.back() != ')' &&
+      !e_clicked_) {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
     string_to_calculate_ += button->text();
     string_to_show_ += button->text();
@@ -276,9 +273,8 @@ void View::PointButtonClicked() {
 }
 
 void View::ModButtonClicked() {
-  if (operator_clicked_ == false &&
-      (num_clicked_ == true || x_clicked_ == true) &&
-      string_to_calculate_.back() != '.' && e_clicked_ == false) {
+  if (!operator_clicked_ && (num_clicked_ || x_clicked_) &&
+      string_to_calculate_.back() != '.' && !e_clicked_) {
     string_to_calculate_ += "%";
     string_to_show_ += "%";
     ui_->display->setText(string_to_show_);
@@ -294,7 +290,7 @@ void View::PowButtonClicked() {
   if (string_to_calculate_.length() != 0 &&
       string_to_calculate_.back() != '.' &&
       string_to_calculate_.back() != 'e' &&
-      (num_clicked_ == true || string_to_calculate_.back() == ')' ||
+      (num_clicked_ || string_to_calculate_.back() == ')' ||
        string_to_calculate_.back() == 'x')) {
     string_to_calculate_ += "^(";
     string_to_show_ += "^(";
@@ -316,8 +312,7 @@ void View::SqrtButtonClicked() {
     operator_clicked_ = false;
 
   } else if (string_to_calculate_.length() != 0 &&
-             (operator_clicked_ == true ||
-              string_to_calculate_.back() == '(')) {
+             (operator_clicked_ || string_to_calculate_.back() == '(')) {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
     string_to_calculate_ += "r(";
     string_to_show_ += button->text() + "(";
@@ -330,9 +325,8 @@ void View::SqrtButtonClicked() {
 }
 
 void View::XButtonClicked() {
-  if ((string_to_calculate_.length() == 0 || operator_clicked_ == true) ||
-      (open_parenthesis_clicked_ > 0 && num_clicked_ == false &&
-       x_clicked_ == false)) {
+  if ((string_to_calculate_.length() == 0 || operator_clicked_) ||
+      (open_parenthesis_clicked_ > 0 && !num_clicked_ && !x_clicked_)) {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
     string_to_calculate_ += "x";
     string_to_show_ += button->text();
@@ -345,7 +339,7 @@ void View::XButtonClicked() {
 }
 
 void View::EButtonClicked() {
-  if (e_clicked_ == false && num_clicked_ == true && point_clicked_ == false) {
+  if (!e_clicked_ && num_clicked_ && !point_clicked_) {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
     string_to_show_ += button->text();
     string_to_calculate_ += button->text();
