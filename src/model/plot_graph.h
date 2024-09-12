@@ -65,7 +65,7 @@ class PlotGraph {
   std::pair<std::vector<double>, std::vector<double>>
       coordinates_;  ///< coordinates for plotting
   Calculation
-      calc_expression_;  ///< instance of Calculation to evaluate expressions.
+      calc_expression_;  ///< instance of Calculation to evaluate expressions
 
 };  // class PlotGraph
 

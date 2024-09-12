@@ -54,9 +54,9 @@ class Controller {
 
  private:
   Calculation
-      *model_;  ///< pointer to the Calculation model for expression evaluation.
+      *model_;  ///< pointer to the Calculation model for expression evaluation
   PlotGraph
-      plot_;  ///< instance of PlotGraph for calculating graph coordinates.
+      plot_;  ///< instance of PlotGraph for calculating graph coordinates
 
 };  // class controller
 

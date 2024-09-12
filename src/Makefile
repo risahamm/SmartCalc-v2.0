@@ -20,8 +20,8 @@ test: clean
 gcov_report: test
 	@lcov -t "test_calculation" -o calculation.info -c -d . --ignore-errors mismatch,inconsistent
 	@lcov -e calculation.info '*/src/model/*.cc' -o calculation_filtered.info --ignore-errors mismatch,inconsistent
-	@genhtml -o gcov_report calculation_filtered.info --ignore-errors mismatch,inconsistent
-	@open ./gcov_report/index.html
+	@genhtml -o ../gcov_report calculation_filtered.info --ignore-errors mismatch,inconsistent
+	@open ./../gcov_report/index.html
 
 dvi:
 	@open ./dvi_report/html/index.html
