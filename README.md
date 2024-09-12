@@ -20,7 +20,7 @@ The russian version of the task can be found in the repository.
 
 ## Chapter I
 
-![smartcalcv2.0](misc/images/smartcalcv2.0.PNG)
+![smartcalcv2.0](images/smartcalcv2.0.PNG)
 
 Planet Earth, 20 August 1983.
 
@@ -71,7 +71,7 @@ A controller is a thin macro component that performs model modifications. It is 
 
 The view contains all the code associated with the programme interface. An ideal interface code should not contain any business logic. It just provides the form for interacting with the user.
 
-![](misc/images/MVC-Process.png)
+![](images/MVC-Process.png)
 
 
 ## Chapter III
