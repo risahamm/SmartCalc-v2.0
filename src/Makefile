@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-Wall -Werror -Wextra -std=c++17
 
-all: clean check_style test gcov_report install
+all: clean check_style test gcov_report install uninstall dvi dist
 
 cmake:
 	@mkdir -p build && cd build && cmake ..
