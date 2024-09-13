@@ -72,3 +72,7 @@ If there are no more tokens left in the input string:
     - Pop the operator from the stack onto the output queue
 
 End.
+
+---
+
+<p align="center"> risahamm@student.21-school.ru</p>
