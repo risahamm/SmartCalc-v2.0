@@ -1,20 +1,10 @@
 var searchData=
 [
-  ['kacos_0',['kAcos',['../namespaces21.html#ad224386bf2b943143bfdb54f56ced21ba8f74ea620833f6642c7c58e4da5f9ec4',1,'s21']]],
-  ['kasin_1',['kAsin',['../namespaces21.html#ad224386bf2b943143bfdb54f56ced21baf7e00c35ce849b2e4307d16097a91e57',1,'s21']]],
-  ['katan_2',['kAtan',['../namespaces21.html#ad224386bf2b943143bfdb54f56ced21ba044b12ffe9fa818b87861320d405d086',1,'s21']]],
-  ['kcos_3',['kCos',['../namespaces21.html#ad224386bf2b943143bfdb54f56ced21ba48a4ee7cd88ee6b528cd9d1b6bdfe856',1,'s21']]],
-  ['kln_4',['kLn',['../namespaces21.html#ad224386bf2b943143bfdb54f56ced21ba71f96d9b5a94defb7f02ed552ff44983',1,'s21']]],
-  ['klog_5',['kLog',['../namespaces21.html#ad224386bf2b943143bfdb54f56ced21baf7971cffe1eeab35748c8d08e50703ec',1,'s21']]],
-  ['knumber_6',['kNumber',['../namespaces21.html#a7af99a71f58b72163736829a5ad72dc4a5a7ab0ccb8bc2cc772c1552d08cb7d2f',1,'s21']]],
-  ['koperator_7',['kOperator',['../namespaces21.html#a7af99a71f58b72163736829a5ad72dc4a3f3cddac17da4ede2986d9186d66b308',1,'s21']]],
-  ['kpow_8',['kPow',['../namespaces21.html#ad224386bf2b943143bfdb54f56ced21bac56b3cb75bb079338b9dd92cadcb42c0',1,'s21']]],
-  ['kpriority_5f0_9',['kPriority_0',['../namespaces21.html#a30c74ee15bedcc317569e9a2ea25dcecad64b72b75e0953068128204c8487e536',1,'s21']]],
-  ['kpriority_5f1_10',['kPriority_1',['../namespaces21.html#a30c74ee15bedcc317569e9a2ea25dceca229cbadb069e6bc23954827884d0ff29',1,'s21']]],
-  ['kpriority_5f2_11',['kPriority_2',['../namespaces21.html#a30c74ee15bedcc317569e9a2ea25dcecaf59b89547ea2cbed2dc5c7c551150d64',1,'s21']]],
-  ['kpriority_5f3_12',['kPriority_3',['../namespaces21.html#a30c74ee15bedcc317569e9a2ea25dceca21a0eac6d589b75f481276687dd7bab5',1,'s21']]],
-  ['kpriority_5f4_13',['kPriority_4',['../namespaces21.html#a30c74ee15bedcc317569e9a2ea25dcecae6fc836aac5301d3023a338952edf9f9',1,'s21']]],
-  ['ksin_14',['kSin',['../namespaces21.html#ad224386bf2b943143bfdb54f56ced21bafeaf8ebd7195342c9e1e668fbb1128c5',1,'s21']]],
-  ['ksqrt_15',['kSqrt',['../namespaces21.html#ad224386bf2b943143bfdb54f56ced21bad77219605b31dd1b06ca54d7bc41f520',1,'s21']]],
-  ['ktan_16',['kTan',['../namespaces21.html#ad224386bf2b943143bfdb54f56ced21bad3610a4098e07c76ea6939f8fccf4c7f',1,'s21']]]
+  ['knumber_0',['kNumber',['../namespaces21.html#a7af99a71f58b72163736829a5ad72dc4a5a7ab0ccb8bc2cc772c1552d08cb7d2f',1,'s21']]],
+  ['koperator_1',['kOperator',['../namespaces21.html#a7af99a71f58b72163736829a5ad72dc4a3f3cddac17da4ede2986d9186d66b308',1,'s21']]],
+  ['kpriority_5f0_2',['kPriority_0',['../namespaces21.html#a30c74ee15bedcc317569e9a2ea25dcecad64b72b75e0953068128204c8487e536',1,'s21']]],
+  ['kpriority_5f1_3',['kPriority_1',['../namespaces21.html#a30c74ee15bedcc317569e9a2ea25dceca229cbadb069e6bc23954827884d0ff29',1,'s21']]],
+  ['kpriority_5f2_4',['kPriority_2',['../namespaces21.html#a30c74ee15bedcc317569e9a2ea25dcecaf59b89547ea2cbed2dc5c7c551150d64',1,'s21']]],
+  ['kpriority_5f3_5',['kPriority_3',['../namespaces21.html#a30c74ee15bedcc317569e9a2ea25dceca21a0eac6d589b75f481276687dd7bab5',1,'s21']]],
+  ['kpriority_5f4_6',['kPriority_4',['../namespaces21.html#a30c74ee15bedcc317569e9a2ea25dcecae6fc836aac5301d3023a338952edf9f9',1,'s21']]]
 ];

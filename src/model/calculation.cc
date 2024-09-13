@@ -55,7 +55,7 @@ long double Calculation::Calculate(s21::Lexeme &current_operator,
       result = b * a;
     } else if (current_operator.value == "/") {
       result = b / a;
-    } else if (current_operator.value == "%") {
+    } else if (current_operator.value == "%") { /* mod */
       if (a == 0.0) {
         result = NAN;
       } else {
@@ -65,27 +65,27 @@ long double Calculation::Calculate(s21::Lexeme &current_operator,
 
     /* operations that require one operand (except pow) */
   } else {
-    if (current_operator.value == "r") {
+    if (current_operator.value == "r") { /* sqrt */
       result = sqrt(a);
-    } else if (current_operator.value == "^") {
+    } else if (current_operator.value == "^") { /* pow */
       b = numbers.top();
       numbers.pop();
       result = pow(b, a);
-    } else if (current_operator.value == "s") {
+    } else if (current_operator.value == "s") { /* sin */
       result = sinl(a);
-    } else if (current_operator.value == "c") {
+    } else if (current_operator.value == "c") { /* cos */
       result = cosl(a);
-    } else if (current_operator.value == "t") {
+    } else if (current_operator.value == "t") { /* tan */
       result = tanl(a);
-    } else if (current_operator.value == "S") {
+    } else if (current_operator.value == "S") { /* asin */
       result = asinl(a);
-    } else if (current_operator.value == "C") {
+    } else if (current_operator.value == "C") { /* acos */
       result = acosl(a);
-    } else if (current_operator.value == "T") {
+    } else if (current_operator.value == "T") { /* atan */
       result = atanl(a);
-    } else if (current_operator.value == "l") {
+    } else if (current_operator.value == "l") { /* ln */
       result = logl(a);
-    } else if (current_operator.value == "L") {
+    } else if (current_operator.value == "L") { /* log */
       result = log10l(a);
     }
   }

@@ -15,7 +15,7 @@ The russian version of the task can be found in the repository.
 - The program implements GUI based on Qt 6.7.
 - The program is implemented using the MVC pattern.
 - Makefile with targets *all, install, uninstall, clean, check_style, dvi, dist, test, gcov_report* is provided.
-- Installation directory - `build`.
+- Installation directory - `src/build`.
 - `dvi` target provides with *doxygen* style documentation.
 - `dist` target generates a zipped .tar file of archive for distribution.
 
@@ -28,6 +28,8 @@ The Model-View-Controller (MVC) pattern is a scheme for separating application m
 The `view` contains all the code associated with the program interface, while `model`performs the calculation.
 
 ![](images/MVC-Process.png)
+
+#### Calculation
 
 The calculation is based on *Dijkstra's algorithm* or the *shunting-yard algorithm* to translate expressions into *reverse Polish notation* to implement the calculation.
 
@@ -46,7 +48,7 @@ If the token is:
     - Move operators from the stack to the output queue until the token at the top of the stack is a left parenthesis. If there is no left parenthesis in the stack, there is an error in the expression.
 
 - Operator (O1):
-    - While there is an token-operator O2 at the top of the stack, that has greater precedence than O1 or they have the same precedence and O1 is left-associative:
+    - While there is a token-operator O2 at the top of the stack, that has greater precedence than O1 or they have the same precedence and O1 is left-associative:
     - Pop O2 from the stack into the output queue
     - Push O1 onto the stack
 

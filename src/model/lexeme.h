@@ -19,25 +19,6 @@ enum class Priority {
 };
 
 /**
- * @brief Represents the types of mathematical operators.
- * @details This enum class defines various mathematical operator types, each
- * associated with a specific character representation. These operators can be
- * used in expressions for calculations.
- */
-enum class OperatorType {
-  kSqrt = 'r',
-  kPow = '^',
-  kLog = 'L',
-  kLn = 'l',
-  kSin = 's',
-  kCos = 'c',
-  kTan = 't',
-  kAsin = 'S',
-  kAcos = 'C',
-  kAtan = 'T'
-};
-
-/**
  * @brief Represents the type of a lexeme.
  */
 enum class LexemeType { kNumber, kOperator };

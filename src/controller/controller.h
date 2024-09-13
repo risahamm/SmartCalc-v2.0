@@ -39,7 +39,7 @@ class Controller {
   }
 
   /**
-   * Calculates the x and y coordinates for graphing based on the given
+   * @brief Calculates the x and y coordinates for graphing based on the given
    * expression.
    * @param expression string representing the mathematical expression to be
    * evaluated.

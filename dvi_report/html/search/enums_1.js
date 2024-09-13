@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operatortype_0',['OperatorType',['../namespaces21.html#ad224386bf2b943143bfdb54f56ced21b',1,'s21']]]
+  ['priority_0',['Priority',['../namespaces21.html#a30c74ee15bedcc317569e9a2ea25dcec',1,'s21']]]
 ];

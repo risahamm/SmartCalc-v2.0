@@ -105,8 +105,7 @@ Priority ReversePolishNotation::GetPriority(std::string::iterator it) {
     element_priority = Priority::kPriority_1;
   } else if (*it == '*' || *it == '/' || *it == '%') {
     element_priority = Priority::kPriority_2;
-  } else if (*it == static_cast<char>(OperatorType::kPow) ||
-             *it == static_cast<char>(OperatorType::kSqrt)) {
+  } else if (*it == '^' || *it == 'r') { /* pow and sqrt */
     element_priority = Priority::kPriority_3;
   } else {
     element_priority = Priority::kPriority_4;

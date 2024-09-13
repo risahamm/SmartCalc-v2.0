@@ -78,7 +78,6 @@ void View::ClearButtonClicked() {
   open_parenthesis_clicked_ = 0;
   flag_first_zero_ = false;
   e_clicked_ = false;
-  GetAllFlags();
 }
 
 void View::NumberClicked() {
@@ -140,7 +139,6 @@ void View::NumberClicked() {
       operator_clicked_ = false;
     }
   }
-  GetAllFlags();
 }
 
 void View::PlusMinusOperatorClicked() {
@@ -168,7 +166,6 @@ void View::PlusMinusOperatorClicked() {
     ui_->display->setText(string_to_show_);
     operator_clicked_ = true;
   }
-  GetAllFlags();
 }
 
 void View::MulDivOperatorClicked() {
@@ -191,7 +188,6 @@ void View::MulDivOperatorClicked() {
     operator_clicked_ = true;
     x_clicked_ = false;
   }
-  GetAllFlags();
 }
 
 void View::MathFunctionClicked() {
@@ -222,7 +218,6 @@ void View::MathFunctionClicked() {
     num_clicked_ = false;
     operator_clicked_ = false;
   }
-  GetAllFlags();
 }
 
 void View::OpenParenthesisButtonClicked() {
@@ -244,7 +239,6 @@ void View::OpenParenthesisButtonClicked() {
     operator_clicked_ = false;
     num_clicked_ = false;
   }
-  GetAllFlags();
 }
 
 void View::CloseParenthesisButtonClicked() {
@@ -257,7 +251,6 @@ void View::CloseParenthesisButtonClicked() {
     open_parenthesis_clicked_--;
     operator_clicked_ = false;
   }
-  GetAllFlags();
 }
 
 void View::PointButtonClicked() {
@@ -269,7 +262,6 @@ void View::PointButtonClicked() {
     ui_->display->setText(string_to_show_);
     point_clicked_ = true;
   }
-  GetAllFlags();
 }
 
 void View::ModButtonClicked() {
@@ -283,7 +275,6 @@ void View::ModButtonClicked() {
     num_clicked_ = false;
     x_clicked_ = false;
   }
-  GetAllFlags();
 }
 
 void View::PowButtonClicked() {
@@ -299,7 +290,6 @@ void View::PowButtonClicked() {
     num_clicked_ = false;
     x_clicked_ = false;
   }
-  GetAllFlags();
 }
 
 void View::SqrtButtonClicked() {
@@ -321,7 +311,6 @@ void View::SqrtButtonClicked() {
     open_parenthesis_clicked_++;
     operator_clicked_ = false;
   }
-  GetAllFlags();
 }
 
 void View::XButtonClicked() {
@@ -335,7 +324,6 @@ void View::XButtonClicked() {
     operator_clicked_ = false;
     num_clicked_ = false;
   }
-  GetAllFlags();
 }
 
 void View::EButtonClicked() {
@@ -346,7 +334,6 @@ void View::EButtonClicked() {
     ui_->display->setText(string_to_show_);
     e_clicked_ = true;
   }
-  GetAllFlags();
 }
 
 void View::ChopString(size_t number_to_chop) {
@@ -437,7 +424,6 @@ void View::BackspaceClicked() {
 
     ClearButtonClicked();
   }
-  GetAllFlags();
 }
 
 bool View::GetPointStatus(QString::ConstIterator str) {
@@ -449,7 +435,6 @@ bool View::GetPointStatus(QString::ConstIterator str) {
     }
     --str;
   }
-
   return false;
 }
 
@@ -458,7 +443,6 @@ bool View::GetOperatorStatus(QString::ConstIterator str) {
       (*str == '+' || *str == '-' || *str == '*' || *str == '/')) {
     return true;
   }
-
   return false;
 }
 
@@ -479,7 +463,6 @@ bool View::GetZeroStatus(QString::ConstIterator str) {
       }
     }
   }
-
   return true;
 }
 
@@ -487,7 +470,6 @@ bool View::GetNumStatus(QString::ConstIterator str) {
   if (!str->isNull() && str->isDigit() || *str == '.') {
     return true;
   }
-
   return false;
 }
 
@@ -495,7 +477,6 @@ bool View::GetXStatus(QString::ConstIterator str) {
   if (!str->isNull() && *str == 'x') {
     return true;
   }
-
   return false;
 }
 
@@ -509,7 +490,6 @@ bool View::GetEStatus(QString::ConstIterator str) {
   if (!str->isNull() && *str == 'e') {
     return true;
   }
-
   return false;
 }
 
@@ -518,7 +498,6 @@ void View::EqualButtonClicked() {
       operator_clicked_ == false) {
     s21::FormatString formatted_str(string_to_calculate_);
     long double x_value = ui_->x_value_input->text().toDouble();
-    std::cout << "formatted_str: " << formatted_str.GetString() << std::endl;
     long double result =
         controller_->Calculate(formatted_str.GetString(), x_value);
 

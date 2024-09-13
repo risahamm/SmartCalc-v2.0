@@ -6,6 +6,5 @@ var searchData=
   ['_7egraph_3',['~Graph',['../class_graph.html#a902c5b3eacb66d60752525ab23297a95',1,'Graph']]],
   ['_7elexeme_4',['~Lexeme',['../classs21_1_1_lexeme.html#a34e24e60e776728b5ca2b38afa086e4b',1,'s21::Lexeme']]],
   ['_7eplotgraph_5',['~PlotGraph',['../classs21_1_1_plot_graph.html#a9ac53bfa79d731d3ffd84adb080e3d68',1,'s21::PlotGraph']]],
-  ['_7ereversepolishnotation_6',['~ReversePolishNotation',['../classs21_1_1_reverse_polish_notation.html#a1486fed861d86e2e17e91191cc357db0',1,'s21::ReversePolishNotation']]],
-  ['_7eview_7',['~View',['../class_view.html#ad0dc854db9aabbea98a334dec89f785c',1,'View']]]
+  ['_7ereversepolishnotation_6',['~ReversePolishNotation',['../classs21_1_1_reverse_polish_notation.html#a1486fed861d86e2e17e91191cc357db0',1,'s21::ReversePolishNotation']]]
 ];
