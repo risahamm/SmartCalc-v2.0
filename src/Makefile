@@ -38,7 +38,7 @@ dist:
 	@cd ../dist && rm -rf SmartCalc.app README.md
 
 clean:
-	@rm -rf test *.gcda *.gcno *.o *.info *.a
+	@rm -rf test *.gcda *.gcno *.o *.info *.a ../gcov_report
 	@echo "\033[46mCleaned\033[0m"
 
 check_style:
