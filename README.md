@@ -8,7 +8,7 @@ It is supported to use the variable *x* and plot the corresponding function.
 The russian version of the task can be found in the repository.
 
 - The program is developed in C++ language of C++17 standard.
-- The program code is located in the src folder.
+- The program code is located in *src* folder.
 - The code of the program is written in accordance with Google style;
 - Classes are implemented within the `s21` namespace.
 - Full coverage of expression calculation modules is provided with unit-tests using the GTest library;

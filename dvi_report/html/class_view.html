@@ -100,6 +100,7 @@ $(function(){initNavTree('class_view.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-slots">Private Slots</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -113,11 +114,8 @@ $(function(){initNavTree('class_view.html',''); initResizable(true); });
 
 <p><code>#include &lt;<a class="el" href="view_8h_source.html">view.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a8b11eb18341cb29fd705ed39e41d2b01" id="r_a8b11eb18341cb29fd705ed39e41d2b01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b11eb18341cb29fd705ed39e41d2b01">View</a> (QWidget *parent=nullptr, <a class="el" href="classs21_1_1_controller.html">s21::Controller</a> *controller=nullptr)</td></tr>
-<tr class="memdesc:a8b11eb18341cb29fd705ed39e41d2b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_view.html" title="Class representing the main user interface of the calculator application.">View</a> class instance that represents the main user interface.  <br /></td></tr>
-<tr class="separator:a8b11eb18341cb29fd705ed39e41d2b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Public Slots</h2></td></tr>
 <tr class="memitem:afa0cc3021b3d785493b890af11a85c78" id="r_afa0cc3021b3d785493b890af11a85c78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa0cc3021b3d785493b890af11a85c78">NumberClicked</a> ()</td></tr>
 <tr class="memdesc:afa0cc3021b3d785493b890af11a85c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles clicked number-buttons, including zero as a first digit in a number-lexeme to avoid multiple print.  <br /></td></tr>
 <tr class="separator:afa0cc3021b3d785493b890af11a85c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,6 +165,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a647c101b59029634c3c974848aaa281e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles Graphing button clicked.  <br /></td></tr>
 <tr class="separator:a647c101b59029634c3c974848aaa281e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8b11eb18341cb29fd705ed39e41d2b01" id="r_a8b11eb18341cb29fd705ed39e41d2b01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b11eb18341cb29fd705ed39e41d2b01">View</a> (QWidget *parent=nullptr, <a class="el" href="classs21_1_1_controller.html">s21::Controller</a> *controller=nullptr)</td></tr>
+<tr class="memdesc:a8b11eb18341cb29fd705ed39e41d2b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_view.html" title="Class representing the main user interface of the calculator application.">View</a> class instance that represents the main user interface.  <br /></td></tr>
+<tr class="separator:a8b11eb18341cb29fd705ed39e41d2b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0dc854db9aabbea98a334dec89f785c" id="r_ad0dc854db9aabbea98a334dec89f785c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0dc854db9aabbea98a334dec89f785c">~View</a> ()</td></tr>
+<tr class="memdesc:ad0dc854db9aabbea98a334dec89f785c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
+<tr class="separator:ad0dc854db9aabbea98a334dec89f785c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Private Slots</h2></td></tr>
 <tr class="memitem:a02c4edc7bd90df14cc16dd110cd7e3a0" id="r_a02c4edc7bd90df14cc16dd110cd7e3a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02c4edc7bd90df14cc16dd110cd7e3a0">GraphWindowClosed</a> ()</td></tr>
@@ -215,10 +222,8 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:aa3082784b6bc44d2758a765d10a29c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to Controller class instance  <br /></td></tr>
 <tr class="separator:aa3082784b6bc44d2758a765d10a29c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b2fde55ce796b5ed06510c6e73bbcc3" id="r_a2b2fde55ce796b5ed06510c6e73bbcc3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b2fde55ce796b5ed06510c6e73bbcc3">string_to_calculate_</a></td></tr>
-<tr class="memdesc:a2b2fde55ce796b5ed06510c6e73bbcc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">string representation of an expression to calculate, processed for parsing  <br /></td></tr>
 <tr class="separator:a2b2fde55ce796b5ed06510c6e73bbcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3549e55b04b99128424111a148e6436f" id="r_a3549e55b04b99128424111a148e6436f"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3549e55b04b99128424111a148e6436f">string_to_show_</a></td></tr>
-<tr class="memdesc:a3549e55b04b99128424111a148e6436f"><td class="mdescLeft">&#160;</td><td class="mdescRight">string representation of an expression to send to UI  <br /></td></tr>
 <tr class="separator:a3549e55b04b99128424111a148e6436f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6beb09fbfb9a6f815c269b5de44cfab" id="r_ad6beb09fbfb9a6f815c269b5de44cfab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6beb09fbfb9a6f815c269b5de44cfab">num_clicked_</a> = false</td></tr>
 <tr class="memdesc:ad6beb09fbfb9a6f815c269b5de44cfab"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag indicating number-lexeme status  <br /></td></tr>
@@ -236,7 +241,6 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:aca0fa16797140e8e6ae7e0069f6bcaf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag indicating 'e' status for scientific notation  <br /></td></tr>
 <tr class="separator:aca0fa16797140e8e6ae7e0069f6bcaf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ab4292d90a80b68556ccf602f0f7f80" id="r_a0ab4292d90a80b68556ccf602f0f7f80"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ab4292d90a80b68556ccf602f0f7f80">flag_first_zero_</a> = false</td></tr>
-<tr class="memdesc:a0ab4292d90a80b68556ccf602f0f7f80"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag indicating status of '0' as a first digit in a number-lexeme  <br /></td></tr>
 <tr class="separator:a0ab4292d90a80b68556ccf602f0f7f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58080fc5982f87055a80a1fea9e69f51" id="r_a58080fc5982f87055a80a1fea9e69f51"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58080fc5982f87055a80a1fea9e69f51">open_parenthesis_clicked_</a> = 0</td></tr>
 <tr class="memdesc:a58080fc5982f87055a80a1fea9e69f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">counter of parentheses  <br /></td></tr>
@@ -276,12 +280,34 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab557dbb144f9e7837026ece7715b88cc" name="ab557dbb144f9e7837026ece7715b88cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab557dbb144f9e7837026ece7715b88cc">&#9670;&#160;</a></span>BackspaceClicked()</h2>
+<a id="ad0dc854db9aabbea98a334dec89f785c" name="ad0dc854db9aabbea98a334dec89f785c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0dc854db9aabbea98a334dec89f785c">&#9670;&#160;</a></span>~View()</h2>
 
 <div class="memitem">
 <div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">View::~View </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default destructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab557dbb144f9e7837026ece7715b88cc" name="ab557dbb144f9e7837026ece7715b88cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab557dbb144f9e7837026ece7715b88cc">&#9670;&#160;</a></span>BackspaceClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::BackspaceClicked </td>
@@ -290,6 +316,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles 'backspace' button clicked. </p>
@@ -330,10 +361,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ad58604f7d007c8e2cd6dab57cf65359b" name="ad58604f7d007c8e2cd6dab57cf65359b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad58604f7d007c8e2cd6dab57cf65359b">&#9670;&#160;</a></span>ClearButtonClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad58604f7d007c8e2cd6dab57cf65359b">&#9670;&#160;</a></span>ClearButtonClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::ClearButtonClicked </td>
@@ -342,6 +376,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles 'Clear All' button clicked. </p>
@@ -349,10 +388,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a06a10e84a078cc2dbb12eae216760047" name="a06a10e84a078cc2dbb12eae216760047"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06a10e84a078cc2dbb12eae216760047">&#9670;&#160;</a></span>CloseParenthesisButtonClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a06a10e84a078cc2dbb12eae216760047">&#9670;&#160;</a></span>CloseParenthesisButtonClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::CloseParenthesisButtonClicked </td>
@@ -361,6 +403,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles closing parenthesis button clicked. </p>
@@ -368,10 +415,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a1b2ff783e983d2381f7ef67600b3f188" name="a1b2ff783e983d2381f7ef67600b3f188"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b2ff783e983d2381f7ef67600b3f188">&#9670;&#160;</a></span>EButtonClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b2ff783e983d2381f7ef67600b3f188">&#9670;&#160;</a></span>EButtonClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::EButtonClicked </td>
@@ -380,6 +430,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles 'e' button clicked. </p>
@@ -387,10 +442,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a38f7902b5e71fa62ea9b26f1f1e9abfd" name="a38f7902b5e71fa62ea9b26f1f1e9abfd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38f7902b5e71fa62ea9b26f1f1e9abfd">&#9670;&#160;</a></span>EqualButtonClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a38f7902b5e71fa62ea9b26f1f1e9abfd">&#9670;&#160;</a></span>EqualButtonClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::EqualButtonClicked </td>
@@ -399,6 +457,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles '=' button clicked. </p>
@@ -664,10 +727,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a0fd0cbd6580f9419f93d622891168d92" name="a0fd0cbd6580f9419f93d622891168d92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fd0cbd6580f9419f93d622891168d92">&#9670;&#160;</a></span>MathFunctionClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fd0cbd6580f9419f93d622891168d92">&#9670;&#160;</a></span>MathFunctionClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::MathFunctionClicked </td>
@@ -676,6 +742,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles 'sin', 'cos', 'tan', 'asin', 'acos', 'atan', 'ln', 'log' buttons clicked. </p>
@@ -683,10 +754,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a8ffda9884fe89f875997ee376a56e463" name="a8ffda9884fe89f875997ee376a56e463"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ffda9884fe89f875997ee376a56e463">&#9670;&#160;</a></span>ModButtonClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffda9884fe89f875997ee376a56e463">&#9670;&#160;</a></span>ModButtonClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::ModButtonClicked </td>
@@ -695,6 +769,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles 'mod' button clicked. </p>
@@ -702,10 +781,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ad56f75ab5bdfe39f9a46f0791d057b13" name="ad56f75ab5bdfe39f9a46f0791d057b13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad56f75ab5bdfe39f9a46f0791d057b13">&#9670;&#160;</a></span>MulDivOperatorClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad56f75ab5bdfe39f9a46f0791d057b13">&#9670;&#160;</a></span>MulDivOperatorClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::MulDivOperatorClicked </td>
@@ -714,6 +796,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles multiplication and division buttons clicked. </p>
@@ -721,10 +808,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="afa0cc3021b3d785493b890af11a85c78" name="afa0cc3021b3d785493b890af11a85c78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa0cc3021b3d785493b890af11a85c78">&#9670;&#160;</a></span>NumberClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afa0cc3021b3d785493b890af11a85c78">&#9670;&#160;</a></span>NumberClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::NumberClicked </td>
@@ -733,20 +823,25 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles clicked number-buttons, including zero as a first digit in a number-lexeme to avoid multiple print. </p>
-<pre class="fragment">Default destructor.
-</pre><p> ~View();</p>
-<p>public slots: /**  </p>
 
 </div>
 </div>
 <a id="a647c101b59029634c3c974848aaa281e" name="a647c101b59029634c3c974848aaa281e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a647c101b59029634c3c974848aaa281e">&#9670;&#160;</a></span>OpenGraphWindow()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a647c101b59029634c3c974848aaa281e">&#9670;&#160;</a></span>OpenGraphWindow</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::OpenGraphWindow </td>
@@ -755,6 +850,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles Graphing button clicked. </p>
@@ -762,10 +862,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="aa34088c0d5e7dccd6c099fcfc97a8db3" name="aa34088c0d5e7dccd6c099fcfc97a8db3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa34088c0d5e7dccd6c099fcfc97a8db3">&#9670;&#160;</a></span>OpenParenthesisButtonClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa34088c0d5e7dccd6c099fcfc97a8db3">&#9670;&#160;</a></span>OpenParenthesisButtonClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::OpenParenthesisButtonClicked </td>
@@ -774,6 +877,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles opening parenthesis button clicked. </p>
@@ -781,10 +889,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="af53cb0fa5bdd960469fe642375278694" name="af53cb0fa5bdd960469fe642375278694"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af53cb0fa5bdd960469fe642375278694">&#9670;&#160;</a></span>PlusMinusOperatorClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af53cb0fa5bdd960469fe642375278694">&#9670;&#160;</a></span>PlusMinusOperatorClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::PlusMinusOperatorClicked </td>
@@ -793,6 +904,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles addition and subtraction buttons clicked. </p>
@@ -800,10 +916,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a0f307f421e7a549a6d9725f1cf5adfa8" name="a0f307f421e7a549a6d9725f1cf5adfa8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f307f421e7a549a6d9725f1cf5adfa8">&#9670;&#160;</a></span>PointButtonClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f307f421e7a549a6d9725f1cf5adfa8">&#9670;&#160;</a></span>PointButtonClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::PointButtonClicked </td>
@@ -812,6 +931,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles point button clicked. </p>
@@ -819,10 +943,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ad4362cc045cd7c971aed4d4f524f4180" name="ad4362cc045cd7c971aed4d4f524f4180"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4362cc045cd7c971aed4d4f524f4180">&#9670;&#160;</a></span>PowButtonClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4362cc045cd7c971aed4d4f524f4180">&#9670;&#160;</a></span>PowButtonClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::PowButtonClicked </td>
@@ -831,6 +958,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles 'pow' button clicked. </p>
@@ -861,7 +993,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles the way the result of calculation will be sent to UI. </p>
-<p>Configurates the calculation result to be presented as an integer or floating point number or scientific notation if exceeds display capacity. Treats exceptions as 'calculation error'. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Configures the calculation result to be presented as an integer or floating point number or scientific notation if exceeds display capacity. Treats exceptions as 'calculation error'. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">result</td><td>string representing result of calculation to be sent to UI. </td></tr>
   </table>
@@ -871,10 +1003,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ae0e8890081cacc1fbf6a7e4d71996bdc" name="ae0e8890081cacc1fbf6a7e4d71996bdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0e8890081cacc1fbf6a7e4d71996bdc">&#9670;&#160;</a></span>SqrtButtonClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0e8890081cacc1fbf6a7e4d71996bdc">&#9670;&#160;</a></span>SqrtButtonClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::SqrtButtonClicked </td>
@@ -883,6 +1018,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles 'sqrt' button clicked. </p>
@@ -924,10 +1064,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="af3904c3a9244cc8379ab806033699d22" name="af3904c3a9244cc8379ab806033699d22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3904c3a9244cc8379ab806033699d22">&#9670;&#160;</a></span>XButtonClicked()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af3904c3a9244cc8379ab806033699d22">&#9670;&#160;</a></span>XButtonClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::XButtonClicked </td>
@@ -936,6 +1079,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Handles 'x' button clicked. </p>
@@ -1010,7 +1158,6 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>flag indicating status of '0' as a first digit in a number-lexeme </p>
 
 </div>
@@ -1154,7 +1301,6 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>string representation of an expression to calculate, processed for parsing </p>
 
 </div>
@@ -1178,7 +1324,6 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>string representation of an expression to send to UI </p>
 
 </div>

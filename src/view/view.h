@@ -34,13 +34,14 @@ class View : public QMainWindow {
   View(QWidget *parent = nullptr, s21::Controller *controller = nullptr);
 
   /**
-   * Default destructor.
+   * @brief Default destructor.
+   */
   ~View();
 
  public slots:
   /**
    * @brief Handles clicked number-buttons, including zero as a first digit in a
- number-lexeme to avoid multiple print.
+   * number-lexeme to avoid multiple print.
    */
   void NumberClicked();
 
@@ -178,7 +179,7 @@ class View : public QMainWindow {
 
   /**
    * @brief Handles the way the result of calculation will be sent to UI.
-   * @details Configurates the calculation result to be presented as an integer
+   * @details Configures the calculation result to be presented as an integer
    * or floating point number or scientific notation if exceeds display
    * capacity. Treats exceptions as 'calculation error'.
    * @param result string representing result of calculation to be sent to UI.
@@ -210,10 +211,10 @@ class View : public QMainWindow {
   bool point_clicked_ = false;     ///< flag indicating point status
   bool operator_clicked_ = false;  ///< flag indicating operator status
   bool x_clicked_ = false;         ///< flag indicating x-variable status
-  bool e_clicked_ =
-      false;  ///< flag indicating 'e' status for scientific notation
-  bool flag_first_zero_ = false;  ///< flag indicating status of '0' as a first
-                                  ///< digit in a number-lexeme
+  bool e_clicked_ = false;         ///< flag indicating 'e' status
+                                   ///< for scientific notation
+  bool flag_first_zero_ = false;   ///< flag indicating status of '0' as a first
+                                   ///< digit in a number-lexeme
   int open_parenthesis_clicked_ = 0;  ///< counter of parentheses
 };
 

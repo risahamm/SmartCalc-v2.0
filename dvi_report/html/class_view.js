@@ -1,6 +1,7 @@
 var class_view =
 [
     [ "View", "class_view.html#a8b11eb18341cb29fd705ed39e41d2b01", null ],
+    [ "~View", "class_view.html#ad0dc854db9aabbea98a334dec89f785c", null ],
     [ "BackspaceClicked", "class_view.html#ab557dbb144f9e7837026ece7715b88cc", null ],
     [ "ChopString", "class_view.html#a3f5450a4d1f20de6643a0608be906851", null ],
     [ "ClearButtonClicked", "class_view.html#ad58604f7d007c8e2cd6dab57cf65359b", null ],
