@@ -7,11 +7,16 @@ cmake:
 	@mkdir -p build && cd build && cmake ..
 
 install: cmake
+	@echo "\033[46mInstallation\033[0m"
 	@cd build && make
+	@echo "\033[46mApplication installed\033[0m"
+	@make dvi
 	@cd build && open SmartCalc.app
 
 uninstall: clean
-	rm -rf build
+	@rm -rf build
+	@rm -rf ../dist
+	@echo "\033[46mApplication removed\033[0m"
 
 test: clean
 	$(CC) $(CFLAGS) --coverage model/tests/*.cc model/*.cc -lgtest -lgtest_main -pthread -o test
@@ -27,9 +32,14 @@ dvi:
 	@open ./../dvi_report/html/index.html
 
 dist:
+	@mkdir -p ../dist
+	@cp -R build/SmartCalc.app ../dist
+	@cd ../dist && tar cvzf SmartCalc.tar *
+	@cd ../dist && rm -rf SmartCalc.app README.md
 
 clean:
-	rm -rf test *.gcda *.gcno *.o *.info *.a
+	@rm -rf test *.gcda *.gcno *.o *.info *.a
+	@echo "\033[46mCleaned\033[0m"
 
 check_style:
 	clang-format -style=Google -n view/*.cc view/*.h
