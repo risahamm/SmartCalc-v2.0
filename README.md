@@ -2,10 +2,18 @@
 
 #### Implementation of an extended version of a conventional calculator in C++17.
 
+The russian version of the task can be found in the repository.
+
 In addition to basic arithmetic operations, such as plus-minus and multiply-divide, it is possible to calculate arithmetic expressions taking into account priorities, as well as some mathematical functions (sin, cos, logarithm, etc.).
 It is supported to use the variable *x* and plot the corresponding function.
 
-The russian version of the task can be found in the repository.
+<p align="center">
+  <img src="images/calc.gif" alt="Calculator" width="200">
+</p>
+
+<p align="center">
+  <img src="images/graph.gif" alt="Graphing" width="500">
+</p>
 
 - The program is developed in C++ language of C++17 standard.
 - The program code is located in *src* folder.
