@@ -539,6 +539,11 @@ void View::SetResult(long double &result) {
     }
 
     ui_->display->setText(string_to_show_);
+
+    if (string_to_calculate_.length() == 1 &&
+        string_to_calculate_.back() == '0') {
+      ClearButtonClicked();
+    }
   }
 }
 
