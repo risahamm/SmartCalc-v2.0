@@ -1,5 +1,5 @@
-#ifndef CPP3_SMARTCALC_V2_0_1_SRC_VIEW_VIEW_H
-#define CPP3_SMARTCALC_V2_0_1_SRC_VIEW_VIEW_H
+#ifndef CPP3_SMARTCALC_V2_0_SRC_VIEW_VIEW_H_
+#define CPP3_SMARTCALC_V2_0_SRC_VIEW_VIEW_H_
 
 #include <QMainWindow>
 #include <QStack>
@@ -218,4 +218,4 @@ class View : public QMainWindow {
   int open_parenthesis_clicked_ = 0;  ///< counter of parentheses
 };
 
-#endif  // CPP3_SMARTCALC_V2_0_1_SRC_VIEW_VIEW_H
+#endif  // CPP3_SMARTCALC_V2_0_SRC_VIEW_VIEW_H_

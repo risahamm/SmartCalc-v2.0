@@ -1,5 +1,5 @@
-#ifndef CPP3_SMARTCALC_V2_0_1_SRC_MODEL_PLOT_GRAPH_H
-#define CPP3_SMARTCALC_V2_0_1_SRC_MODEL_PLOT_GRAPH_H
+#ifndef CPP3_SMARTCALC_V2_0_SRC_MODEL_PLOT_GRAPH_H_
+#define CPP3_SMARTCALC_V2_0_SRC_MODEL_PLOT_GRAPH_H_
 
 #include <string>
 #include <vector>
@@ -71,4 +71,4 @@ class PlotGraph {
 
 }  // namespace s21
 
-#endif  // CPP3_SMARTCALC_V2_0_1_SRC_MODEL_PLOT_GRAPH_H
+#endif  // CPP3_SMARTCALC_V2_0_SRC_MODEL_PLOT_GRAPH_H_

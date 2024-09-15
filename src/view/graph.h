@@ -1,5 +1,5 @@
-#ifndef GRAPH_H
-#define GRAPH_H
+#ifndef CPP3_SMARTCALC_V2_0_SRC_VIEW_GRAPH_H_
+#define CPP3_SMARTCALC_V2_0_SRC_VIEW_GRAPH_H_
 
 #include <qcustomplot.h>
 
@@ -60,4 +60,4 @@ class Graph : public QDialog {
   Ui::Graph *ui_;  ///< window interface
 };
 
-#endif  // GRAPH_H
+#endif  // CPP3_SMARTCALC_V2_0_SRC_VIEW_GRAPH_H_
