@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['v2_200_0',['SmartCalc v2.0',['../index.html',1,'']]],
-  ['version_20of_20a_20conventional_20calculator_20in_20c_2017_1',['Implementation of an extended version of a conventional calculator in C++17.',['../index.html#autotoc_md1',1,'']]]
+  ['num_5fclicked_5f_0',['num_clicked_',['../class_view.html#ad6beb09fbfb9a6f815c269b5de44cfab',1,'View']]],
+  ['numberclicked_1',['NumberClicked',['../class_view.html#afa0cc3021b3d785493b890af11a85c78',1,'View']]]
 ];

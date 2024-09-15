@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['c_2017_0',['Implementation of an extended version of a conventional calculator in C++17.',['../index.html#autotoc_md1',1,'']]],
-  ['calculation_1',['Calculation',['../index.html#autotoc_md4',1,'']]],
-  ['calculator_20in_20c_2017_2',['Implementation of an extended version of a conventional calculator in C++17.',['../index.html#autotoc_md1',1,'']]],
-  ['conventional_20calculator_20in_20c_2017_3',['Implementation of an extended version of a conventional calculator in C++17.',['../index.html#autotoc_md1',1,'']]]
+  ['backspaceclicked_0',['BackspaceClicked',['../class_view.html#ab557dbb144f9e7837026ece7715b88cc',1,'View']]],
+  ['basic_5fstr_5f_1',['basic_str_',['../classs21_1_1_format_string.html#a2136d8156232e3e8825526e8cef42b52',1,'s21::FormatString']]],
+  ['buildplot_2',['BuildPlot',['../class_graph.html#ad8eda3da45c27ae23e2aa4e68271d22c',1,'Graph']]]
 ];
