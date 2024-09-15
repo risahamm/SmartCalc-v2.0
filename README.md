@@ -35,9 +35,7 @@ The Model-View-Controller (MVC) pattern is a scheme for separating application m
 
 The `view` contains all the code associated with the program interface, while `model`performs the calculation.
 
-<p align="center">
-  <img src="images/MVC-Process.png" alt="MVC" width="1000">
-</p>
+![](images/MVC-Process.png)
 
 #### Calculation
 
